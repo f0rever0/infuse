@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -27,6 +28,9 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-pretendard)"],
       },
+      textShadow: {
+        neon: "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #FAEB2C,0 0 82px #FAEB2C,0 0 92px #FAEB2C,0 0 102px #FAEB2C,0 0 151px #FAEB2C",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -34,6 +38,17 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };
 export default config;

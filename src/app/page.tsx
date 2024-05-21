@@ -39,10 +39,10 @@ export default function Home() {
   }, [blink]);
 
   return (
-    <div className="font-sans">
+    <div className="font-sans bg-black text-white bold-16">
       <span className="mr-2">infuse</span>
       <span className="mr-2">into</span>
-      <span>
+      <span className="text-shadow-neon">
         {`${word[currentWordIndex].substring(0, charIndex)}${
           blink ? "|" : " "
         }`}
