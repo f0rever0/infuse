@@ -8,6 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        white: "#FFFFFF",
+        black: "#000000",
+        red: "#D92929",
+        orange: "#F2BB16",
+        yellow: "#FEE500",
+        blue: "#296CF2",
+        green: "#17A649",
+        purple: "#9538F2",
+        "light-gray": "#F2F4FB",
+        "dark-gray": "#5F6680",
+        "middle-blue-gray": "#B2BBDD",
+        "light-blue-gray": "#DCE1F2",
+        "bright-blue-gray": "#F2F4FB",
+        "pale-blue": "#FCFCFF",
+      },
       fontFamily: {
         sans: ["var(--font-pretendard)"],
       },
