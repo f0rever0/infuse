@@ -1,3 +1,5 @@
+"use client";
+
 import { Suspense, useEffect } from "react";
 import MainLayout from "./layout";
 import video from "@/data/video.json";
