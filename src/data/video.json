@@ -3,8 +3,19 @@
     "title": "뮤직비디오",
     "list": [
       {
-        "sumnail": "https://img.youtube.com/vi/pOR8CUeTJpc/0.jpg",
-        "url": "https://www.youtube.com/watch?v=pOR8CUeTJpc"
+        "sumnailUrl": "https://img.youtube.com/vi/pOR8CUeTJpc/0.jpg",
+        "videoTitle": "BY MY MONSTER 뮤직비디오",
+        "videoUrl": "https://www.youtube.com/watch?v=pOR8CUeTJpc"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/TmOqQ-iSY-Q/0.jpg",
+        "videoTitle": "바람이 분다 뮤직비디오",
+        "videoUrl": "https://www.youtube.com/watch?v=TmOqQ-iSY-Q"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/2Y40Ma6HXbw/0.jpg",
+        "videoTitle": "구스범스 뮤직비디오",
+        "videoUrl": "  https://www.youtube.com/watch?v=2Y40Ma6HXbw"
       }
     ]
   }
