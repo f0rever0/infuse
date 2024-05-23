@@ -1,6 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import * as amplitude from "@amplitude/analytics-browser";
+import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
+
+const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
+
+amplitude.add(pageViewTrackingEnrichment());
+amplitude.init(AMPLITUDE_API_KEY, {
+  logLevel: amplitude.Types.LogLevel.Warn,
+  defaultTracking: true,
+});
 
 export default function Home() {
   const word = ["ONF", "HYOJIN", "E_TION", "SEUNGJUN", "WYATT", "MINKYUN", "U"];

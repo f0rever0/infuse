@@ -1,10 +1,15 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import MainLayout from "./layout";
 import video from "@/data/video.json";
 import { VideoListData } from "@/types/data";
 import VideoList from "@/components/main/videoList";
+import { track } from "@amplitude/analytics-browser";
 
 export default function MainPage() {
+  useEffect(() => {
+    track("main");
+  });
+
   return (
     <MainLayout>
       <section>
