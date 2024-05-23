@@ -8,11 +8,21 @@
   }
 
   /* Typography */
+  .bold-24 {
+    @apply text-[24px]/[175%] font-bold;
+  }
   .bold-16 {
     @apply text-[16px]/[175%] font-bold;
   }
   .bold-14 {
     @apply text-[14px]/[200%] font-bold;
+  }
+
+  .regular-20 {
+    @apply text-[20px]/[175%] font-normal;
+  }
+  .regular-18 {
+    @apply text-[18px]/[175%] font-normal;
   }
   .regular-14 {
     @apply text-[14px]/[200%] font-normal;
