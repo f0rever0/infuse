@@ -8,9 +8,9 @@ import VideoList from "@/components/main/videoList";
 import { track } from "@amplitude/analytics-browser";
 
 export default function MainPage() {
-  useEffect(() => {
-    track("main");
-  });
+  // useEffect(() => {
+  //   track("main");
+  // });
 
   return (
     <MainLayout>
