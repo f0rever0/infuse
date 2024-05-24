@@ -17,9 +17,7 @@ export default function MainPage() {
       <section>
         <Suspense fallback={<p>Loading...</p>}>
           {video.map((data: VideoListData) => {
-            return (
-              <VideoList title={data.title} list={data.list} key={data.title} />
-            );
+            return <VideoList {...data} key={data.title} />;
           })}
         </Suspense>
       </section>
