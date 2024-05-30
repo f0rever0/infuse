@@ -13,7 +13,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 
 export default function Home() {
-  const word = ["ONF", "HYOJIN", "E_TION", "SEUNGJUN", "WYATT", "MINKYUN", "U"];
+  const word = ["ONF", "HYOJIN", "E-TION", "SEUNGJUN", "WYATT", "MINKYUN", "U"];
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
   const [charIndex, setCharIndex] = useState<number>(0);
   const [blink, setBlink] = useState<boolean>(true);
@@ -49,9 +49,9 @@ export default function Home() {
   }, [blink]);
 
   return (
-    <div className="font-sans bg-black text-white bold-16">
-      <span className="mr-2">infuse</span>
-      <span className="mr-2">into</span>
+    <div className="font-sans bg-black text-white bold-120 w-full h-screen flex justify-center items-center ">
+      <span className="mr-12">infuse</span>
+      <span className="mr-12">into</span>
       <span className="text-shadow-neon">
         {`${word[currentWordIndex].substring(0, charIndex)}${
           blink ? "|" : " "

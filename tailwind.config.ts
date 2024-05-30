@@ -29,7 +29,7 @@ const config: Config = {
         sans: ["var(--font-pretendard)"],
       },
       textShadow: {
-        neon: "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #FAEB2C,0 0 82px #FAEB2C,0 0 92px #FAEB2C,0 0 102px #FAEB2C,0 0 151px #FAEB2C",
+        neon: "0 0 2px #fff, 0 0 3px #fff, 0 0 5px #fff, 0 0 10px rgba(250, 235, 44, 0.7), 0 0 20px rgba(250, 235, 44, 0.6), 0 0 30px rgba(250, 235, 44, 0.5), 0 0 40px rgba(250, 235, 44, 0.4), 0 0 50px rgba(250, 235, 44, 0.3)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
