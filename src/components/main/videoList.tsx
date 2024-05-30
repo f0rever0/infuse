@@ -3,9 +3,9 @@ import Video from "./video";
 
 export default function videoList({ title, list }: VideoListData) {
   return (
-    <section className="w-screen h-full mb-4">
-      <h2 className="text-white bold-18">{title}</h2>
-      <article className="flex flex-row gap-1">
+    <section className="h-full mb-4 ">
+      <h2 className="text-white bold-24">{title}</h2>
+      <article className=" flex flex-row gap-1 overflow-x-scroll">
         {list.map((data: VideoData) => {
           return <Video key={data.videoTitle} {...data} />;
         })}
