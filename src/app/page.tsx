@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import * as amplitude from "@amplitude/analytics-browser";
 import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
+import Link from "next/link";
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
 
@@ -49,14 +50,19 @@ export default function Home() {
   }, [blink]);
 
   return (
-    <div className="font-sans bg-black text-white bold-120 w-full h-screen flex justify-center items-center ">
-      <span className="mr-12">infuse</span>
-      <span className="mr-12">into</span>
-      <span className="text-shadow-neon">
-        {`${word[currentWordIndex].substring(0, charIndex)}${
-          blink ? "|" : " "
-        }`}
-      </span>
+    <div className="font-sans bg-black text-white w-full h-screen flex justify-center items-center flex-col">
+      <section className="bold-120">
+        <span className="mr-12">infuse</span>
+        <span className="mr-12">into</span>
+        <span className="text-shadow-neon">
+          {`${word[currentWordIndex].substring(0, charIndex)}${
+            blink ? "|" : " "
+          }`}
+        </span>
+      </section>
+      <Link href="/main" className="bold-24 text-dark-gray cursor-pointer">
+        press to start
+      </Link>
     </div>
   );
 }
