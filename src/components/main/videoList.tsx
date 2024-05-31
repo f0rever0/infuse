@@ -1,7 +1,7 @@
 import { VideoListData, VideoData } from "@/types/data";
 import Video from "./video";
 
-export default function videoList({ title, list }: VideoListData) {
+export default function VideoList({ title, list }: VideoListData) {
   return (
     <section className="h-full mb-4 ">
       <h2 className="text-white bold-24">{title}</h2>
