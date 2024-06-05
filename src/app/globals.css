@@ -8,8 +8,11 @@
   }
 
   /* Typography */
-  .bold-120 {
-    @apply text-[120px]/[175%] font-bold;
+  .bold-96 {
+    @apply text-[96px]/[175%] font-bold;
+  }
+  .bold-36 {
+    @apply text-[36px]/[175%] font-bold;
   }
   .bold-24 {
     @apply text-[24px]/[175%] font-bold;

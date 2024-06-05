@@ -51,14 +51,16 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-black text-white w-full h-screen flex justify-center items-center flex-col">
-      <section className="bold-120">
-        <span className="mr-12">infuse</span>
-        <span className="mr-12">into</span>
-        <span className="text-shadow-neon">
-          {`${word[currentWordIndex].substring(0, charIndex)}${
-            blink ? "|" : " "
-          }`}
-        </span>
+      <section className="flex flex-col justify-center items-center bold-36 sm:bold-96 sm:flex-row">
+        <span className="mr-0 sm:mr-8">infuse</span>
+        <div>
+          <span className="mr-4 sm:mr-8">into</span>
+          <span className="text-shadow-neon">
+            {`${word[currentWordIndex].substring(0, charIndex)}${
+              blink ? "|" : " "
+            }`}
+          </span>
+        </div>
       </section>
       <Link href="/main" className="bold-24 text-dark-gray cursor-pointer">
         press to start
