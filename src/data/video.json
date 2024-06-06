@@ -268,6 +268,11 @@
         "videoUrl": "https://www.youtube.com/watch?v=-TuMXAEd3gs"
       },
       {
+        "sumnailUrl": "https://img.youtube.com/vi/7Ei9kVdZWeg/0.jpg",
+        "videoTitle": "박소현의 팡터뷰",
+        "videoUrl": "https://www.youtube.com/watch?v=7Ei9kVdZWeg"
+      },
+      {
         "sumnailUrl": "https://img.youtube.com/vi/bNLvErInXU8/0.jpg",
         "videoTitle": "뇌피셜록",
         "videoUrl": "https://www.youtube.com/watch?v=bNLvErInXU8"
@@ -281,6 +286,11 @@
         "sumnailUrl": "https://img.youtube.com/vi/fEDPUmb1aJg/0.jpg",
         "videoTitle": "마피아댄스",
         "videoUrl": "https://www.youtube.com/watch?v=fEDPUmb1aJg"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/nxGPTxLZ26I/0.jpg",
+        "videoTitle": "보았다 릴레이게임",
+        "videoUrl": "https://www.youtube.com/watch?v=nxGPTxLZ26I"
       }
     ]
   },
@@ -292,7 +302,6 @@
         "videoTitle": "Love wins all 커버",
         "videoUrl": "https://www.youtube.com/watch?v=KrtvQ_-HGgQ"
       },
-
       {
         "sumnailUrl": "https://img.youtube.com/vi/b06mycYfo4g/0.jpg",
         "videoTitle": "첫 줄 커버",
@@ -352,12 +361,22 @@
         "sumnailUrl": "https://img.youtube.com/vi/CCRhWzrRo6w/0.jpg",
         "videoTitle": "신세계 안무 영상",
         "videoUrl": "https://www.youtube.com/watch?v=CCRhWzrRo6w"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/Ri-bAjq5YWc/0.jpg",
+        "videoTitle": "담담디람 안무 영상",
+        "videoUrl": "https://www.youtube.com/watch?v=Ri-bAjq5YWc"
       }
     ]
   },
   {
     "title": "라이브 무대",
     "list": [
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/2m_VUbaq9Us/0.jpg",
+        "videoTitle": "라이징보이스 온앤오프",
+        "videoUrl": "https://www.youtube.com/watch?v=2m_VUbaq9Us"
+      },
       {
         "sumnailUrl": "https://img.youtube.com/vi/mkHdPWKzQEw/0.jpg",
         "videoTitle": "팔레트 온 팝",
@@ -377,6 +396,21 @@
         "sumnailUrl": "https://img.youtube.com/vi/3yslLtPB0sA/0.jpg",
         "videoTitle": "아름답고도 아프구나 커버",
         "videoUrl": "https://www.youtube.com/watch?v=3yslLtPB0sA"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/Fsr1X2SSHTk/0.jpg",
+        "videoTitle": "V DIUM 온앤오프",
+        "videoUrl": "https://www.youtube.com/watch?v=Fsr1X2SSHTk"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/R5j4TYoP0Hw/0.jpg",
+        "videoTitle": "블랙 스완 커버",
+        "videoUrl": "https://www.youtube.com/watch?v=R5j4TYoP0Hw"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/kblNggkN3L8/0.jpg",
+        "videoTitle": "댄스이어 바이 마이 몬스터",
+        "videoUrl": "https://www.youtube.com/watch?v=kblNggkN3L8"
       }
     ]
   },
@@ -417,6 +451,41 @@
         "sumnailUrl": "https://img.youtube.com/vi/41HwC_amj0k/0.jpg",
         "videoTitle": "210303 Day6의 키스 더 라디오",
         "videoUrl": "https://www.youtube.com/watch?v=41HwC_amj0k"
+      }
+    ]
+  },
+  {
+    "title": "공식 채널 예능",
+    "list": [
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/SeC5-y-A51g/0.jpg",
+        "videoTitle": "다이브 인 투 온앤오프",
+        "videoUrl": "https://www.youtube.com/watch?v=SeC5-y-A51g"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/OctQZwSHyD0/0.jpg",
+        "videoTitle": "온가네 딱지한판!",
+        "videoUrl": "https://www.youtube.com/watch?v=OctQZwSHyD0"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/N_UPVom1brI/0.jpg",
+        "videoTitle": "미니게임천국 3",
+        "videoUrl": "https://www.youtube.com/watch?v=N_UPVom1brI"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/BqUWUomUmgs/0.jpg",
+        "videoTitle": "미니게임천국 2",
+        "videoUrl": "https://www.youtube.com/watch?v=BqUWUomUmgs"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/ibh3xmdRz9c/0.jpg",
+        "videoTitle": "미니게임천국 1",
+        "videoUrl": "https://www.youtube.com/watch?v=ibh3xmdRz9c"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/UFYG4Q-XDRs/0.jpg",
+        "videoTitle": "돌아온 온대전",
+        "videoUrl": "https://www.youtube.com/watch?v=UFYG4Q-XDRs"
       }
     ]
   }
