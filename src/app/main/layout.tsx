@@ -4,9 +4,6 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="bg-black h-full w-screen px-4">
-      <nav></nav>
-      {children}
-    </section>
+    <section className="bg-black h-full w-screen pl-4">{children}</section>
   );
 }
