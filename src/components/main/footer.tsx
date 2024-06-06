@@ -4,12 +4,11 @@ import icon_twitter from "@/assets/icons/icon_twitter.svg";
 
 export default function Footer() {
   return (
-    <div className="flex">
-      <p className="text-light-gray">&copy; infuse_into</p>
+    <div className="flex justify-end items-center">
       <Link href={"https://x.com/infuse_into_onf"}>
         <Image src={icon_twitter} alt="트위터 아이콘" width="20" height="20" />
       </Link>
-      <p>모든 문의 @infuse_into_onf 로 부탁드립니다.</p>
+      <p className="text-light-gray pl-3 bold-14"> infuse_into</p>
     </div>
   );
 }
