@@ -5,7 +5,7 @@ export default function Banner() {
         <iframe
           frameBorder="0"
           className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/8G-6a_y3Cxc?autoplay=1&mute=1&controls=0&loop=1&id=8G-6a_y3Cxc"
+          src="https://www.youtube.com/embed/8G-6a_y3Cxc?autoplay=1&mute=1&controls=0&loop=1&playlist=8G-6a_y3Cxc"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
