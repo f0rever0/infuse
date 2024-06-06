@@ -50,7 +50,7 @@ export default function Home() {
   }, [blink]);
 
   return (
-    <div className="font-sans bg-black text-white w-full h-screen flex justify-center items-center flex-col">
+    <div className="font-sans bg-black text-light-gray w-full h-screen flex justify-center items-center flex-col">
       <section className="flex flex-col justify-center items-center bold-36 sm:bold-96 sm:flex-row">
         <span className="mr-0 sm:mr-8">infuse</span>
         <div>
