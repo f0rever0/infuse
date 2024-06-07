@@ -31,7 +31,7 @@
     @apply text-[18px]/[175%] font-normal;
   }
   .regular-14 {
-    @apply text-[14px]/[200%] font-normal;
+    @apply text-[14px]/[175%] font-normal;
   }
   .regular-12 {
     @apply text-[12px]/[200%] font-normal;
