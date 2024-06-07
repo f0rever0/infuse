@@ -4,7 +4,7 @@ import icon_twitter from "@/assets/icons/icon_twitter.svg";
 
 export default function Footer() {
   return (
-    <div className="flex justify-end items-center">
+    <div className="flex justify-end items-center pb-4">
       <Link href={"https://x.com/infuse_into_onf"}>
         <Image src={icon_twitter} alt="트위터 아이콘" width="20" height="20" />
       </Link>
