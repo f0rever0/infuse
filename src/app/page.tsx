@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import * as amplitude from "@amplitude/analytics-browser";
 import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
 import Link from "next/link";
+import { track } from "@amplitude/analytics-browser";
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
 
@@ -62,7 +63,11 @@ export default function Home() {
           </span>
         </div>
       </section>
-      <Link href="/main" className="bold-24 text-dark-gray cursor-pointer">
+      <Link
+        href="/main"
+        className="bold-24 text-dark-gray cursor-pointer"
+        onClick={() => track("press the startButton")}
+      >
         press to start
       </Link>
     </div>
