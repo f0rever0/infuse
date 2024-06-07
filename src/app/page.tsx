@@ -51,10 +51,10 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-black text-light-gray w-full h-screen flex justify-center items-center flex-col">
-      <section className="flex flex-col justify-center items-center bold-36 sm:bold-96 sm:flex-row">
-        <span className="mr-0 sm:mr-8">infuse</span>
+      <section className="flex flex-col justify-center items-center bold-36 sm:bold-96 lg:flex-row">
+        <span className="mr-0 lg:mr-8 ">infuse</span>
         <div>
-          <span className="mr-4 sm:mr-8">into</span>
+          <span className="mr-4 lg:mr-6 sm:mr-8">into</span>
           <span className="text-shadow-neon">
             {`${word[currentWordIndex].substring(0, charIndex)}${
               blink ? "|" : " "

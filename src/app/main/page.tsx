@@ -21,7 +21,7 @@ export default function MainPage() {
       <nav className="flex items-center">
         <p className="font-sans bold-36 text-light-gray">infuse</p>
         <section className="text-white flex flex-row text-left justify-end items-end mb-4 pt-4 w-full pr-4">
-          <p className="mr-2">워프봉님,</p>
+          <p className="mr-2">퓨즈님,</p>
           <Image src={light_stick} alt="응원봉 프로필" width="40" height="40" />
         </section>
       </nav>

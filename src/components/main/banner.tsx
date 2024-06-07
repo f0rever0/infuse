@@ -10,14 +10,14 @@ export default function Banner() {
           allowFullScreen
         ></iframe>
         <div className="absolute bottom-0 left-0 p-4 text-white">
-          <h1 className="text-lg bold-36">BY MY MONSTER</h1>
-          <p className="egular-20 w-[50%] break-keep">
+          <h1 className="text-lg bold-24 lg:bold-36">BY MY MONSTER</h1>
+          <p className="hidden break-keep sm:regular-14 lg:regular-18 sm:block sm:w-[80%] lg:w-[50%]">
             온앤오프의 미니 8집 앨범 타이틀 곡 &#39;Bye My Monster&#39;는
             클래식한 분위기와 강렬한 밴드 사운드의 팝 댄스 곡으로, 라흐마니노프
-            심포니 2번, 3악장 (Rachmaninoff&#39;s Symphony No.2, III. Adagio)의
-            테마를 인용하여 웅장한 서사를 더욱 극대화했다. 멤버마다 긴 호흡으로
-            연결된 가사가 하나의 이야기를 완성시키며, 서정적이면서도 파워풀한
-            보컬과 랩, 화음이 빈틈없이 어우러져 극적인 몰입도를 높여준다.
+            심포니 2번, 3악장의 테마를 인용하여 웅장한 서사를 더욱 극대화했다.
+            멤버마다 긴 호흡으로 연결된 가사가 하나의 이야기를 완성시키며,
+            서정적이면서도 파워풀한 보컬과 랩, 화음이 빈틈없이 어우러져 극적인
+            몰입도를 높여준다.
           </p>
         </div>
       </div>
