@@ -12,6 +12,8 @@ export default function Video({ sumnailUrl, videoTitle, videoUrl }: VideoData) {
           src={sumnailUrl}
           alt={`${videoTitle} 썸네일`}
           title={videoTitle}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
         />
       </Link>
     </div>
