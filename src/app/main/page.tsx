@@ -12,9 +12,9 @@ import Footer from "@/components/main/Footer";
 import light_stick from "@/assets/images/light_stick.jpg";
 
 export default function MainPage() {
-  // useEffect(() => {
-  //   track("main");
-  // });
+  useEffect(() => {
+    track("main");
+  });
 
   return (
     <>
