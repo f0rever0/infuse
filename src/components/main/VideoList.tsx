@@ -1,5 +1,5 @@
 import { VideoListData, VideoData } from "@/types/data";
-import Video from "./video";
+import Video from "./Video";
 import DraggableScroller from "../DraggableScroller";
 
 export default function VideoList({ title, list }: VideoListData) {

@@ -4,7 +4,7 @@ import { VideoData } from "@/types/data";
 import { track } from "@amplitude/analytics-browser";
 
 interface VideoProps extends VideoData {
-  listTitle: Record<string, string>;
+  listTitle: string;
 }
 export default function Video({
   sumnailUrl,
@@ -17,7 +17,7 @@ export default function Video({
       <Link
         href={videoUrl}
         onClick={() => {
-          track("video list title", listTitle);
+          track(`video list title : ${listTitle}`);
         }}
       >
         <div className="relative w-full h-full group-hover:z-10">

@@ -5,10 +5,10 @@ import MainLayout from "./layout";
 import Image from "next/image";
 import video from "@/data/video.json";
 import { VideoListData } from "@/types/data";
-import VideoList from "@/components/main/videoList";
+import VideoList from "@/components/main/VideoList";
 import { track } from "@amplitude/analytics-browser";
-import Banner from "@/components/main/banner";
-import Footer from "@/components/main/footer";
+import Banner from "@/components/main/Banner";
+import Footer from "@/components/main/Footer";
 import light_stick from "@/assets/images/light_stick.jpg";
 
 export default function MainPage() {
