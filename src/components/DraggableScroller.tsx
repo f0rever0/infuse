@@ -12,7 +12,7 @@ export default function DraggableScroller({
   return (
     <>
       <section
-        className="flex flex-row gap-2 overflow-x-scroll"
+        className="flex flex-row gap-2 overflow-x-scroll overflow-y-hidden"
         ref={containerRef}
         {...events}
       >
