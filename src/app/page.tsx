@@ -22,6 +22,10 @@ export default function Home() {
   const [reverse, setReverse] = useState<boolean>(false);
 
   useEffect(() => {
+    track("logo");
+  });
+
+  useEffect(() => {
     if (charIndex === word[currentWordIndex].length + 1 && !reverse) {
       setReverse(true);
       return;
@@ -63,11 +67,7 @@ export default function Home() {
           </span>
         </div>
       </section>
-      <Link
-        href="/main"
-        className="bold-24 text-dark-gray cursor-pointer"
-        onClick={() => track("press the startButton")}
-      >
+      <Link href="/main" className="bold-24 text-dark-gray cursor-pointer">
         press to start
       </Link>
     </div>
