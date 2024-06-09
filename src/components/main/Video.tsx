@@ -27,8 +27,6 @@ export default function Video({
             src={sumnailUrl}
             alt={`${videoTitle} 썸네일`}
             title={videoTitle}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
             className="relative z-0 transition-transform duration-300 transform group-hover:z-10 group-hover:scale-110"
           />
         </div>
