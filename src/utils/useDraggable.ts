@@ -58,19 +58,19 @@ export const useDraggable = (
 
     setIsDragging(false);
 
-    const endX = e.clientX;
-    const childNodes = [...(scrollerRef.current?.childNodes || [])];
-    const dragDiff = Math.abs(startX - endX);
+    // const endX = e.clientX;
+    // const childNodes = [...(scrollerRef.current?.childNodes || [])];
+    // const dragDiff = Math.abs(startX - endX);
 
-    if (dragDiff > 10) {
-      childNodes.forEach((child) => {
-        child.addEventListener("click", preventUnexpectedEffects);
-      });
-    } else {
-      childNodes.forEach((child) => {
-        child.removeEventListener("click", preventUnexpectedEffects);
-      });
-    }
+    // if (dragDiff > 10) {
+    //   childNodes.forEach((child) => {
+    //     child.addEventListener("click", preventUnexpectedEffects);
+    //   });
+    // } else {
+    //   childNodes.forEach((child) => {
+    //     child.removeEventListener("click", preventUnexpectedEffects);
+    //   });
+    // }
   };
 
   return {
