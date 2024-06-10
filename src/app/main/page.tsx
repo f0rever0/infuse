@@ -44,7 +44,11 @@ export default function MainPage() {
         <Suspense fallback={<p>Loading...</p>}>
           {video.map((data: VideoListData) => {
             return (
-              <VideoList title={data.title} list={data.list} key={data.title} />
+              <VideoList
+                title={t(`videoListTitle.${data.title}`)}
+                list={data.list}
+                key={data.title}
+              />
             );
           })}
         </Suspense>
