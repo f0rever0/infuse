@@ -5,7 +5,7 @@ import * as amplitude from "@amplitude/analytics-browser";
 import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
 import Link from "next/link";
 import { track } from "@amplitude/analytics-browser";
-import "locales/i18n";
+import "./i18n";
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
 
