@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import video from "@/data/video.json";
 import { VideoListData } from "@/types/data";
@@ -18,10 +18,19 @@ export default function MainPage() {
     track("main");
   });
 
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <>
       <nav className="flex items-center">
         <p className="font-sans bold-36 text-light-gray">infuse</p>
+        <section className="text-pale-blue">
+          <button onClick={() => changeLanguage("ko")}>한국어</button>
+          <button onClick={() => changeLanguage("en")}>English</button>
+        </section>
+
         <section className="text-white flex flex-row text-left justify-end items-end mb-4 pt-4 w-full pr-4">
           <p className="mr-2">{t("nickname")}</p>
           <Image src={light_stick} alt="응원봉 프로필" width="40" height="40" />
