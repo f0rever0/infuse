@@ -19,6 +19,7 @@ export default function MainPage() {
   });
 
   const changeLanguage = (lang: string) => {
+    console.log("🚀 lang", lang);
     i18n.changeLanguage(lang);
   };
 
