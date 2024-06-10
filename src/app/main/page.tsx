@@ -23,6 +23,7 @@ export default function MainPage() {
     i18n.changeLanguage(lang);
   };
 
+  console.log(t("nickname"));
   return (
     <>
       <nav className="flex items-center">
@@ -43,11 +44,7 @@ export default function MainPage() {
         <Suspense fallback={<p>Loading...</p>}>
           {video.map((data: VideoListData) => {
             return (
-              <VideoList
-                title={t(data.title)}
-                list={data.list}
-                key={data.title}
-              />
+              <VideoList title={data.title} list={data.list} key={data.title} />
             );
           })}
         </Suspense>
