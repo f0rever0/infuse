@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html>
       <head>
         <title>infuse</title>
         <meta name="description" content="온앤오프 동영상 모음 페이지" />
