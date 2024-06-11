@@ -16,12 +16,24 @@ const resources = {
   },
 };
 
+const getInitialLanguage = () => {
+  const localStorageLang = localStorage.getItem("i18nextLng");
+  if (localStorageLang) {
+    return localStorageLang;
+  } else {
+    const browserLang = navigator.language || navigator.userLanguage;
+    localStorage.setItem("i18nextLng", browserLang);
+    return browserLang;
+  }
+};
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
+    lng: getInitialLanguage(),
     fallbackLng: "en",
     debug: true,
     interpolation: {

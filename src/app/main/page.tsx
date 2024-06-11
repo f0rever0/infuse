@@ -10,6 +10,7 @@ import Banner from "@/components/main/Banner";
 import Footer from "@/components/main/Footer";
 import light_stick from "@/assets/images/light_stick.jpg";
 import { useTranslation } from "react-i18next";
+import icon_earth from "@/assets/icons/icon_earth.png";
 
 export default function MainPage() {
   const { t, i18n } = useTranslation();
@@ -37,6 +38,7 @@ export default function MainPage() {
   const changeLanguage = (lang: string) => {
     setCurrentLanguage(lang);
     i18n.changeLanguage(lang);
+    localStorage.setItem("i18nextLng", lang);
     setIsLanguageMenuOpen(false);
   };
 
@@ -54,24 +56,20 @@ export default function MainPage() {
             ref={languageRef}
             onClick={() => setIsLanguageMenuOpen((prev) => !prev)}
           >
-            🌐
+            <Image src={icon_earth} alt="언어 선택" width={30} height={30} />
             {isLanguageMenuOpen && (
-              <ul className="absolute top-8 left-0 bg-gray-800 bg-opacity-90 p-2 rounded z-50">
+              <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50 mt-2">
                 <button
-                  className={`regular-14 ${
-                    currentLanguage === "ko"
-                      ? "text-white"
-                      : "text-middle-blue-gray"
+                  className={`regular-18 ${
+                    currentLanguage === "ko" ? "text-white" : "text-dark-gray"
                   }  hover:text-white mb-1`}
                   onClick={() => changeLanguage("ko")}
                 >
                   한국어
                 </button>
                 <button
-                  className={`regular-14 ${
-                    currentLanguage === "en"
-                      ? "text-white"
-                      : "text-middle-blue-gray"
+                  className={`regular-18 ${
+                    currentLanguage === "en" ? "text-white" : "text-dark-gray"
                   }  hover:text-white mb-1`}
                   onClick={() => changeLanguage("en")}
                 >
