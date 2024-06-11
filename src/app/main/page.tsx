@@ -9,23 +9,32 @@ import { track } from "@amplitude/analytics-browser";
 import Banner from "@/components/main/Banner";
 import Footer from "@/components/main/Footer";
 import light_stick from "@/assets/images/light_stick.jpg";
-import { useTranslation } from "react-i18next";
 import icon_earth from "@/assets/icons/icon_earth.png";
+import { translateLanguage } from "@/utils/translate";
 
 export default function MainPage() {
-  const { t, i18n } = useTranslation();
-  const languageRef = useRef<null | HTMLDivElement>(null);
-  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState<boolean>(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string>(i18n.language);
+  const languageRef = useRef(null);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState("ko");
+
+  useEffect(() => {
+    const localStorageLang = localStorage.getItem("language");
+    if (localStorageLang) {
+      setCurrentLanguage(localStorageLang);
+    } else {
+      localStorage.setItem("language", currentLanguage);
+    }
+  }, []);
 
   const handleUserClose = useCallback(
-    (e: any) => {
+    (e: Event) => {
       if (
         isLanguageMenuOpen &&
         languageRef.current !== null &&
         !languageRef.current.contains(e.target)
-      )
+      ) {
         setIsLanguageMenuOpen(false);
+      }
     },
     [isLanguageMenuOpen]
   );
@@ -37,26 +46,25 @@ export default function MainPage() {
 
   const changeLanguage = (lang: string) => {
     setCurrentLanguage(lang);
-    i18n.changeLanguage(lang);
-    localStorage.setItem("i18nextLng", lang);
+    localStorage.setItem("language", lang);
     setIsLanguageMenuOpen(false);
   };
 
   useEffect(() => {
-    track("main");
-  });
+    console.log(isLanguageMenuOpen);
+  }, [isLanguageMenuOpen]);
 
   return (
     <>
-      <nav className="flex items-center">
+      <nav className="flex items-center w-full justify-between">
         <div className="flex flex-row items-center">
           <p className="font-sans bold-36 text-light-gray">infuse</p>
           <section
-            className="relative cursor-pointer ml-4 pt-3"
+            className="relative cursor-pointer ml-4 pt-3 width-[20px] height-[20px]"
             ref={languageRef}
             onClick={() => setIsLanguageMenuOpen((prev) => !prev)}
           >
-            <Image src={icon_earth} alt="언어 선택" width={30} height={30} />
+            <Image src={icon_earth} alt="언어 선택" width={20} height={20} />
             {isLanguageMenuOpen && (
               <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50 mt-2">
                 <button
@@ -79,19 +87,24 @@ export default function MainPage() {
             )}
           </section>
         </div>
-        <section className="text-white flex flex-row text-left justify-end items-end mb-4 pt-4 w-full pr-4">
-          <p className="mr-2">{t("nickname")}</p>
+        <section className="text-white flex flex-row text-left justify-end items-end mb-4 pt-4 pr-4">
+          <p className="mr-2">
+            {translateLanguage(currentLanguage, "nickname")}
+          </p>
           <Image src={light_stick} alt="응원봉 프로필" width="40" height="40" />
         </section>
       </nav>
 
-      <Banner />
+      <Banner currentLanguage={currentLanguage} />
       <section className="mt-8">
         <Suspense fallback={<p>Loading...</p>}>
           {video.map((data: VideoListData) => {
             return (
               <VideoList
-                title={t(`videoListTitle.${data.title}`)}
+                title={translateLanguage(
+                  currentLanguage,
+                  `videoListTitle.${data.title}`
+                )}
                 list={data.list}
                 key={data.title}
               />

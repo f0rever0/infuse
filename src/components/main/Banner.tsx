@@ -1,8 +1,6 @@
-import { useTranslation } from "react-i18next";
+import { translateLanguage } from "@/utils/translate";
 
-export default function Banner() {
-  const { t } = useTranslation();
-
+export default function Banner({ currentLanguage }: string) {
   return (
     <div className="pr-4">
       <div className="relative pb-[56.25%] h-0 overflow-hidden">
@@ -16,7 +14,7 @@ export default function Banner() {
         <div className="absolute bottom-0 left-0 p-4 text-white">
           <h1 className="text-lg bold-24 lg:bold-36">BY MY MONSTER</h1>
           <p className="hidden break-keep sm:regular-14 lg:regular-18 sm:block sm:w-[80%] lg:w-[50%]">
-            {t("by-my-monster-description")}
+            {translateLanguage(currentLanguage, "by-my-monster-description")}
           </p>
         </div>
       </div>
