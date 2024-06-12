@@ -3,12 +3,11 @@ import { translateLanguage } from "@/utils/translate";
 interface BannerProps {
   currentLanguage: string;
 }
-export default function Banner({ currentLanguage }: BannerProps) {
+export default function Banner({ currentLanguage }: Readonly<BannerProps>) {
   return (
     <div className="pr-4">
       <div className="relative pb-[56.25%] h-0 overflow-hidden">
         <iframe
-          frameBorder="0"
           className="absolute top-0 left-0 w-full h-full"
           src="https://www.youtube.com/embed/8G-6a_y3Cxc?autoplay=1&mute=1&controls=0&loop=1&playlist=8G-6a_y3Cxc"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,7 +1,11 @@
 import { enData } from "@/app/locales/en.js";
 import { koData } from "@/app/locales/ko.js";
+import { TranslationDataType } from "@/types/data";
 
-export function translateLanguage(type: string, value: string) {
+export function translateLanguage(
+  type: string,
+  value: keyof TranslationDataType
+) {
   let translationData;
 
   switch (type) {
@@ -15,15 +19,7 @@ export function translateLanguage(type: string, value: string) {
       translationData = koData;
   }
 
-  const keys = value.split(".");
-
-  for (const key of keys) {
-    if (translationData[key] !== undefined) {
-      translationData = translationData[key];
-    }
-  }
-
-  let result = translationData;
+  let result = translationData[value];
 
   return result;
 }

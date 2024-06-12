@@ -103,10 +103,8 @@ export default function MainPage() {
           {video.map((data) => {
             return (
               <VideoList
-                title={translateLanguage(
-                  currentLanguage,
-                  `videoListTitle.${data.title}`
-                )}
+                currentLanguage={currentLanguage}
+                title={data.title}
                 list={data.list}
                 key={data.title}
               />

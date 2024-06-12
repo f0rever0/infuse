@@ -1,6 +1,18 @@
-import { enData } from "@/app/locales/en";
+export type TranslationDataType = {
+  nickname: string;
+  "by-my-monster-description": string;
+  mv: string;
+  record: string;
+  practice: string;
+  stage: string;
+  radio: string;
+  "official-entertain": string;
+  "youtube-entertain": string;
+  vlog: string;
+  "on-flim": string;
+  monotree: string;
+};
 
-export type VideoListTitleKeys = keyof (typeof enData)["videoListTitle"];
 export interface VideoData {
   sumnailUrl: string;
   videoTitle: string;
@@ -8,6 +20,6 @@ export interface VideoData {
 }
 
 export interface VideoListData {
-  title: VideoListTitleKeys;
+  title: Omit<TranslationDataType, "nickname" | "by-my-monster-description">;
   list: VideoData[];
 }
