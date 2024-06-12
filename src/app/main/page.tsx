@@ -13,9 +13,7 @@ import { translateLanguage } from "@/utils/translate";
 export default function MainPage() {
   const languageRef = useRef<HTMLElement>(null);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState<boolean>(false);
-  const [currentLanguage, setCurrentLanguage] = useState<string>(
-    localStorage.getItem("language") ?? "ko"
-  );
+  const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
 
   useEffect(() => {
     const localStorageLang = localStorage.getItem("language");
