@@ -191,11 +191,6 @@
         "sumnailUrl": "https://img.youtube.com/vi/L8OLd0iO8KI/0.jpg",
         "videoTitle": "why 안무 영상",
         "videoUrl": "https://www.youtube.com/watch?v=L8OLd0iO8KI"
-      },
-      {
-        "sumnailUrl": "https://img.youtube.com/vi/6PtTJkMgX78/0.jpg",
-        "videoTitle": "플라이 투 더 문 안무 영상",
-        "videoUrl": "https://www.youtube.com/watch?v=6PtTJkMgX78"
       }
     ]
   },
@@ -228,6 +223,11 @@
         "videoUrl": "https://www.youtube.com/watch?v=dG9wL7Zhho8"
       },
       {
+        "sumnailUrl": "https://img.youtube.com/vi/R5j4TYoP0Hw/0.jpg",
+        "videoTitle": "블랙 스완 커버",
+        "videoUrl": "https://www.youtube.com/watch?v=R5j4TYoP0Hw"
+      },
+      {
         "sumnailUrl": "https://img.youtube.com/vi/fo7ZcXt_bOE/0.jpg",
         "videoTitle": "에잇 커버",
         "videoUrl": "https://www.youtube.com/watch?v=fo7ZcXt_bOE"
@@ -247,11 +247,7 @@
         "videoTitle": "V DIUM 온앤오프",
         "videoUrl": "https://www.youtube.com/watch?v=Fsr1X2SSHTk"
       },
-      {
-        "sumnailUrl": "https://img.youtube.com/vi/R5j4TYoP0Hw/0.jpg",
-        "videoTitle": "블랙 스완 커버",
-        "videoUrl": "https://www.youtube.com/watch?v=R5j4TYoP0Hw"
-      },
+
       {
         "sumnailUrl": "https://img.youtube.com/vi/w32X2JSfIXs/0.jpg",
         "videoTitle": "Beautiful Beautiful 수트댄스",
@@ -271,6 +267,21 @@
         "sumnailUrl": "https://img.youtube.com/vi/fU2V-AW4t9o/0.jpg",
         "videoTitle": "잇츠 라이브 여름쏙",
         "videoUrl": "https://www.youtube.com/watch?v=fU2V-AW4t9o"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/zHPvg6Xi6Us/0.jpg",
+        "videoTitle": "바람이 분다 퍼포먼스 비디오",
+        "videoUrl": "https://www.youtube.com/watch?v=zHPvg6Xi6Us"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/VaJSit-8em0/0.jpg",
+        "videoTitle": "신세계 퍼포먼스 비디오",
+        "videoUrl": "https://www.youtube.com/watch?v=VaJSit-8em0"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/6PtTJkMgX78/0.jpg",
+        "videoTitle": "플라이 투 더 문 퍼포먼스 비디오",
+        "videoUrl": "https://www.youtube.com/watch?v=6PtTJkMgX78"
       }
     ]
   },
