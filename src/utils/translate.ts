@@ -1,5 +1,5 @@
-import { enData } from "@/app/locales/en.js";
-import { koData } from "@/app/locales/ko.js";
+import { enData } from "@/app/locales/en";
+import { koData } from "@/app/locales/ko";
 import { TranslationDataType } from "@/types/data";
 
 export function translateLanguage(
