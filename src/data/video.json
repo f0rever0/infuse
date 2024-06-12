@@ -1,6 +1,6 @@
 [
   {
-    "title": "뮤직비디오",
+    "title": "mv",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/pOR8CUeTJpc/0.jpg",
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "title": "레코딩 비하인드",
+    "title": "record",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/d_A4a14C1NU/0.jpg",
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "title": "안무 영상",
+    "title": "practice",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/38UUeeCxuns/0.jpg",
@@ -200,7 +200,7 @@
     ]
   },
   {
-    "title": "라이브 무대",
+    "title": "stage",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/2m_VUbaq9Us/0.jpg",
@@ -270,7 +270,7 @@
     ]
   },
   {
-    "title": "라디오",
+    "title": "radio",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/xUmlKMUS_aU/0.jpg",
@@ -310,7 +310,7 @@
     ]
   },
   {
-    "title": "공식 채널 예능",
+    "title": "official-entertain",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/SeC5-y-A51g/0.jpg",
@@ -345,7 +345,7 @@
     ]
   },
   {
-    "title": "유튜브 컨텐츠",
+    "title": "youtube-entertain",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/TH2QEPVlbG4/0.jpg",
@@ -420,7 +420,7 @@
     ]
   },
   {
-    "title": "ONF's VLOG",
+    "title": "vlog",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/QPJqBA10KYs/0.jpg",
@@ -476,7 +476,7 @@
   },
 
   {
-    "title": "ON FILM",
+    "title": "on-flim",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/KrtvQ_-HGgQ/0.jpg",
@@ -546,7 +546,7 @@
     ]
   },
   {
-    "title": "모노트리 세션 비하인드",
+    "title": "monotree",
     "list": [
       {
         "sumnailUrl": "https://img.youtube.com/vi/vWD19Y-iDlA/0.jpg",
