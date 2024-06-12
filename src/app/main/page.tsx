@@ -5,7 +5,6 @@ import Image from "next/image";
 import video from "@/data/video.json";
 import { VideoListData } from "@/types/data";
 import VideoList from "@/components/main/VideoList";
-import { track } from "@amplitude/analytics-browser";
 import Banner from "@/components/main/Banner";
 import Footer from "@/components/main/Footer";
 import light_stick from "@/assets/images/light_stick.jpg";
@@ -13,9 +12,11 @@ import icon_earth from "@/assets/icons/icon_earth.png";
 import { translateLanguage } from "@/utils/translate";
 
 export default function MainPage() {
-  const languageRef = useRef(null);
-  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("ko");
+  const languageRef = useRef<HTMLElement>(null);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState<boolean>(false);
+  const [currentLanguage, setCurrentLanguage] = useState<string>(
+    localStorage.getItem("language") ?? "ko"
+  );
 
   useEffect(() => {
     const localStorageLang = localStorage.getItem("language");
@@ -27,11 +28,11 @@ export default function MainPage() {
   }, []);
 
   const handleUserClose = useCallback(
-    (e: Event) => {
+    (e: MouseEvent) => {
       if (
         isLanguageMenuOpen &&
         languageRef.current !== null &&
-        !languageRef.current.contains(e.target)
+        !languageRef.current.contains(e.target as Node)
       ) {
         setIsLanguageMenuOpen(false);
       }
@@ -50,10 +51,6 @@ export default function MainPage() {
     setIsLanguageMenuOpen(false);
   };
 
-  useEffect(() => {
-    console.log(isLanguageMenuOpen);
-  }, [isLanguageMenuOpen]);
-
   return (
     <>
       <nav className="flex items-center w-full justify-between">
@@ -71,7 +68,10 @@ export default function MainPage() {
                   className={`regular-18 ${
                     currentLanguage === "ko" ? "text-white" : "text-dark-gray"
                   }  hover:text-white mb-1`}
-                  onClick={() => changeLanguage("ko")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    changeLanguage("ko");
+                  }}
                 >
                   한국어
                 </button>
@@ -79,7 +79,10 @@ export default function MainPage() {
                   className={`regular-18 ${
                     currentLanguage === "en" ? "text-white" : "text-dark-gray"
                   }  hover:text-white mb-1`}
-                  onClick={() => changeLanguage("en")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    changeLanguage("en");
+                  }}
                 >
                   English
                 </button>
