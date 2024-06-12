@@ -12,19 +12,18 @@ export function translateLanguage(type: string, value: string) {
       translationData = enData;
       break;
     default:
-      translationData = enData; // 기본값을 영어로 설정
+      translationData = koData;
   }
 
   const keys = value.split(".");
-  let result = translationData;
 
   for (const key of keys) {
-    if (result[key] !== undefined) {
-      result = result[key];
-    } else {
-      return `Translation not found for key: ${value}`;
+    if (translationData[key] !== undefined) {
+      translationData = translationData[key];
     }
   }
+
+  let result = translationData;
 
   return result;
 }

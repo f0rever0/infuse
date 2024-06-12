@@ -1,6 +1,9 @@
 import { translateLanguage } from "@/utils/translate";
 
-export default function Banner({ currentLanguage }: string) {
+interface BannerProps {
+  currentLanguage: string;
+}
+export default function Banner({ currentLanguage }: BannerProps) {
   return (
     <div className="pr-4">
       <div className="relative pb-[56.25%] h-0 overflow-hidden">

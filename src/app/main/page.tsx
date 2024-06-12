@@ -3,7 +3,6 @@
 import { Suspense, useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import video from "@/data/video.json";
-import { VideoListData } from "@/types/data";
 import VideoList from "@/components/main/VideoList";
 import Banner from "@/components/main/Banner";
 import Footer from "@/components/main/Footer";
@@ -101,7 +100,7 @@ export default function MainPage() {
       <Banner currentLanguage={currentLanguage} />
       <section className="mt-8">
         <Suspense fallback={<p>Loading...</p>}>
-          {video.map((data: VideoListData) => {
+          {video.map((data) => {
             return (
               <VideoList
                 title={translateLanguage(

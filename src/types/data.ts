@@ -1,3 +1,6 @@
+import { enData } from "@/app/locales/en";
+
+export type VideoListTitleKeys = keyof (typeof enData)["videoListTitle"];
 export interface VideoData {
   sumnailUrl: string;
   videoTitle: string;
@@ -5,6 +8,6 @@ export interface VideoData {
 }
 
 export interface VideoListData {
-  title: string;
+  title: VideoListTitleKeys;
   list: VideoData[];
 }
