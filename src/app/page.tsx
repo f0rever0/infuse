@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import * as amplitude from "@amplitude/analytics-browser";
 import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
 import Link from "next/link";
-import { track } from "@amplitude/analytics-browser";
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
 
@@ -20,10 +19,6 @@ export default function Home() {
   const [charIndex, setCharIndex] = useState<number>(0);
   const [blink, setBlink] = useState<boolean>(true);
   const [reverse, setReverse] = useState<boolean>(false);
-
-  useEffect(() => {
-    track("logo");
-  }, []);
 
   useEffect(() => {
     if (charIndex === word[currentWordIndex].length + 1 && !reverse) {
