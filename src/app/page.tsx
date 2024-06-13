@@ -23,7 +23,7 @@ export default function Home() {
 
   useEffect(() => {
     track("logo");
-  });
+  }, []);
 
   useEffect(() => {
     if (charIndex === word[currentWordIndex].length + 1 && !reverse) {
