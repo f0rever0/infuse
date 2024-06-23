@@ -13,5 +13,6 @@ export const koData: TranslationDataType = {
   "youtube-entertain": "유튜브 컨텐츠",
   vlog: "온앤오프 브이로그",
   "on-flim": "ON FILM",
+  "road-to-kingdom": "로드 투 킹덤",
   monotree: "모노트리 세션 비하인드",
 };

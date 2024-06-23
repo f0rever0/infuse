@@ -13,5 +13,6 @@ export const enData: TranslationDataType = {
   "youtube-entertain": "Youtube Entertain Content",
   vlog: "ONF's VLOG",
   "on-flim": "ON FILM",
+  "road-to-kingdom": "Road To Kingdom",
   monotree: "Monotree Session Behind",
 };

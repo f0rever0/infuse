@@ -10,6 +10,7 @@ export type TranslationDataType = {
   "youtube-entertain": string;
   vlog: string;
   "on-flim": string;
+  "road-to-kingdom": string;
   monotree: string;
 };
 
