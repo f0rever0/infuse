@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { TranslationDataType, VideoData } from "@/types/data";
 import Video from "./Video";
-import DraggableScroller from "../DraggableScroller";
+import DraggableScroller from "@/components/DraggableScroller";
 import { translateLanguage } from "@/utils/translate";
 
 interface VideoListProps {
@@ -13,14 +14,29 @@ export default function VideoList({
   title,
   list,
 }: Readonly<VideoListProps>) {
-  let listTitle = translateLanguage(
+  const listTitle = translateLanguage(
     currentLanguage,
     title as keyof TranslationDataType
   );
 
   return (
     <section className="h-full mb-4 ">
-      <h2 className="text-white bold-24">{listTitle}</h2>
+      <article className="flex flex-row items-end">
+        <h2 className="text-white bold-24">{listTitle}</h2>
+        <Link
+          href={{
+            pathname: "/main/viewAll",
+            query: {
+              currentLanguage,
+              listTitle: title,
+            },
+          }}
+          className="text-gray-400 bold-16 ml-2 mb-1"
+        >
+          {translateLanguage(currentLanguage, "view-all")}
+        </Link>
+      </article>
+
       <DraggableScroller>
         {list.map((data: VideoData) => {
           return (
