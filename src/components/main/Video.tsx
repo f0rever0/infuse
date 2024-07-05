@@ -13,7 +13,7 @@ export default function Video({
   listTitle,
 }: VideoProps) {
   return (
-    <div className="relative cursor-hover w-[320px] h-[240px] flex-shrink-0  overflow-visible border-2 border-gray">
+    <div className="relative cursor-hover w-[250px] h-[140.625px] sm:w-[250px] sm:h-[140.625px] md:w-[341.33px] md:h-[192px] lg:w-[455.33px] lg:h-[256px] xl:w-[569.33px] xl:h-[320px] flex-shrink-0  overflow-visible border-2 border-gray">
       <Link
         href={videoUrl}
         onClick={() => {
