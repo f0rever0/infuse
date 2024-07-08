@@ -19,7 +19,7 @@ function VideoList() {
     search as keyof TranslationDataType
   );
 
-  const videoList = video.find((item) => item.title === "mv");
+  const videoList = video.find((item) => item.title === search);
 
   return (
     <section className="h-full mb-4">
@@ -30,15 +30,16 @@ function VideoList() {
             return (
               <div
                 key={data.videoUrl}
-                className="border-slate-100 border-2 cursor-pointer w-[160px] h-[90px] sm:w-[240px] sm:h-[135px] md:w-[320px] md:h-[180px] lg:w-[360px] lg:h-[202.5px]"
+                className="relative cursor-pointer w-[156px] h-[117px] sm:w-[208px] sm:h-[156px] md:w-[312px] md:h-[234px] lg:w-[416px] lg:h-[312px]"
               >
                 <Link href={data.videoUrl}>
-                  {/* <Image
-              fill
-              src={data.sumnailUrl}
-              alt={`${data.videoTitle} 썸네일`}
-              title={data.videoTitle}
-            /> */}
+                  <Image
+                    layout="fill"
+                    objectFit="cover"
+                    src={data.sumnailUrl}
+                    alt={`${data.videoTitle} 썸네일`}
+                    title={data.videoTitle}
+                  />
                 </Link>
               </div>
             );

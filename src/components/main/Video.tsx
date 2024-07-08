@@ -13,20 +13,21 @@ export default function Video({
   listTitle,
 }: VideoProps) {
   return (
-    <div className="relative cursor-hover w-[250px] h-[140.625px] sm:w-[250px] sm:h-[140.625px] md:w-[341.33px] md:h-[192px] lg:w-[455.33px] lg:h-[256px] xl:w-[569.33px] xl:h-[320px] flex-shrink-0  overflow-visible border-2 border-gray">
+    <div className="relative cursor-hover w-[250px] h-[187.5px] sm:w-[250px] sm:h-[187.5px] md:w-[341.33px] md:h-[256px] lg:w-[455.33px] lg:h-[341.5px] xl:w-[569.33px] xl:h-[427px] flex-shrink-0 overflow-visible">
       <Link
         href={videoUrl}
         onClick={() => {
           track(`video list title : ${listTitle}`);
         }}
       >
-        {/* <Image
+        <Image
           fill
+          objectFit="cover"
           src={sumnailUrl}
           alt={`${videoTitle} 썸네일`}
           title={videoTitle}
           className="relative z-0 transform transition-transform duration-300 hover:scale-105"
-        /> */}
+        />
       </Link>
     </div>
   );
