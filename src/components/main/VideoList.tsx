@@ -3,6 +3,7 @@ import { TranslationDataType, VideoData } from "@/types/data";
 import Video from "./Video";
 import DraggableScroller from "@/components/DraggableScroller";
 import { translateLanguage } from "@/utils/translate";
+import { track } from "@amplitude/analytics-browser";
 
 interface VideoListProps {
   title: string;
@@ -32,6 +33,9 @@ export default function VideoList({
             },
           }}
           className="text-gray-400 bold-16 ml-2 mb-1"
+          onClick={() => {
+            track(`view all : ${listTitle}`);
+          }}
         >
           {translateLanguage(currentLanguage, "view-all")}
         </Link>
