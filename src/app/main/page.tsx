@@ -5,7 +5,7 @@ import Image from "next/image";
 import video from "@/data/video.json";
 import VideoList from "@/components/main/VideoList";
 import Banner from "@/components/main/Banner";
-import Footer from "@/components/main/Footer";
+
 import light_stick from "@/assets/images/light_stick.jpg";
 import icon_earth from "@/assets/icons/icon_earth.png";
 import { translateLanguage } from "@/utils/translate";
@@ -110,7 +110,6 @@ export default function MainPage() {
           })}
         </Suspense>
       </section>
-      <Footer />
     </>
   );
 }

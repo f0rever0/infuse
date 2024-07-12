@@ -12,6 +12,7 @@ export type TranslationDataType = {
   "on-flim": string;
   "road-to-kingdom": string;
   monotree: string;
+  "view-all": string;
 };
 
 export interface VideoData {

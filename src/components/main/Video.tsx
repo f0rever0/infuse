@@ -13,7 +13,7 @@ export default function Video({
   listTitle,
 }: VideoProps) {
   return (
-    <div className="relative cursor-hover w-[320px] h-[240px] flex-shrink-0  overflow-visible">
+    <div className="relative cursor-hover w-[250px] h-[187.5px] sm:w-[250px] sm:h-[187.5px] md:w-[341.33px] md:h-[256px] lg:w-[455.33px] lg:h-[341.5px] xl:w-[569.33px] xl:h-[427px] flex-shrink-0 overflow-visible">
       <Link
         href={videoUrl}
         onClick={() => {
@@ -21,8 +21,8 @@ export default function Video({
         }}
       >
         <Image
-          width="320"
-          height="240"
+          fill
+          objectFit="cover"
           src={sumnailUrl}
           alt={`${videoTitle} 썸네일`}
           title={videoTitle}
