@@ -34,7 +34,7 @@ export default function VideoList({
           }}
           className="text-gray-400 bold-16 ml-2 mb-1"
           onClick={() => {
-            track(`view all : ${listTitle}`);
+            // track(`view all : ${listTitle}`);
           }}
         >
           {translateLanguage(currentLanguage, "view-all")}

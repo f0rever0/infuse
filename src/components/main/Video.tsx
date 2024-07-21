@@ -17,7 +17,7 @@ export default function Video({
       <Link
         href={videoUrl}
         onClick={() => {
-          track(`video list title : ${listTitle}`);
+          // track(`video list title : ${listTitle}`);
         }}
       >
         <Image
