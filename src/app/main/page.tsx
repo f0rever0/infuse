@@ -16,11 +16,11 @@ export default function MainPage() {
   const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
 
   useEffect(() => {
-    const localStorageLang = localStorage.getItem("language");
+    const localStorageLang = localStorage.getItem("infuse-language");
     if (localStorageLang) {
       setCurrentLanguage(localStorageLang);
     } else {
-      localStorage.setItem("language", currentLanguage);
+      localStorage.setItem("infuse-language", currentLanguage);
     }
   }, []);
 
