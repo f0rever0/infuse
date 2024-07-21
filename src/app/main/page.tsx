@@ -5,9 +5,12 @@ import Image from "next/image";
 import video from "@/data/video.json";
 import VideoList from "@/components/main/VideoList";
 import Banner from "@/components/main/Banner";
+import Footer from "@/components/main/Footer";
+import Link from "next/link";
 
 import light_stick from "@/assets/images/light_stick.jpg";
 import icon_earth from "@/assets/icons/icon_earth.png";
+import icon_bookmark_line from "@/assets/icons/icon-bookmark-line.png";
 import { translateLanguage } from "@/utils/translate";
 
 export default function MainPage() {
@@ -53,39 +56,64 @@ export default function MainPage() {
       <nav className="flex items-center w-full justify-between">
         <div className="flex flex-row items-center">
           <p className="font-sans bold-36 text-light-gray">infuse</p>
-          <section
-            className="relative cursor-pointer ml-4 pt-3 width-[20px] height-[20px]"
-            ref={languageRef}
-            onClick={() => setIsLanguageMenuOpen((prev) => !prev)}
-          >
-            <Image src={icon_earth} alt="언어 선택" width={20} height={20} />
-            {isLanguageMenuOpen && (
-              <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50 mt-2">
-                <button
-                  className={`regular-18 ${
-                    currentLanguage === "ko" ? "text-white" : "text-dark-gray"
-                  }  hover:text-white mb-1`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    changeLanguage("ko");
-                  }}
-                >
-                  한국어
-                </button>
-                <button
-                  className={`regular-18 ${
-                    currentLanguage === "en" ? "text-white" : "text-dark-gray"
-                  }  hover:text-white mb-1`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    changeLanguage("en");
-                  }}
-                >
-                  English
-                </button>
-              </ul>
-            )}
-          </section>
+          <div className="flex justify-center items-center">
+            <section
+              className="relative cursor-pointer ml-4 pt-3 width-[20px] height-[20px]"
+              ref={languageRef}
+              onClick={() => setIsLanguageMenuOpen((prev) => !prev)}
+            >
+              <Image
+                className="mr-2"
+                src={icon_earth}
+                alt="언어 선택"
+                width={20}
+                height={20}
+              />
+
+              {isLanguageMenuOpen && (
+                <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50 mt-2">
+                  <button
+                    className={`regular-18 ${
+                      currentLanguage === "ko" ? "text-white" : "text-dark-gray"
+                    }  hover:text-white mb-1`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      changeLanguage("ko");
+                    }}
+                  >
+                    한국어
+                  </button>
+                  <button
+                    className={`regular-18 ${
+                      currentLanguage === "en" ? "text-white" : "text-dark-gray"
+                    }  hover:text-white mb-1`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      changeLanguage("en");
+                    }}
+                  >
+                    English
+                  </button>
+                </ul>
+              )}
+            </section>
+            <Link
+              href={{
+                pathname: "/main/bookmark",
+                query: {
+                  currentLanguage,
+                },
+              }}
+              className="text-gray-400 bold-16 mt-3"
+            >
+              <Image
+                src={icon_bookmark_line}
+                alt="북마크"
+                width={20}
+                height={20}
+              />
+            </Link>
+          </div>
         </div>
         <section className="text-white flex flex-row text-left justify-end items-end mb-4 pt-4 pr-4">
           <p className="mr-2">
