@@ -16,4 +16,5 @@ export const enData: TranslationDataType = {
   "road-to-kingdom": "Road To Kingdom",
   monotree: "Monotree Session Behind",
   "view-all": "View all",
+  bookmark: "Bookmark video",
 };

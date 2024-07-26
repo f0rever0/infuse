@@ -16,4 +16,5 @@ export const koData: TranslationDataType = {
   "road-to-kingdom": "로드 투 킹덤",
   monotree: "모노트리 세션 비하인드",
   "view-all": "전체보기",
+  bookmark: "북마크한 동영상",
 };

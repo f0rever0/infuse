@@ -13,11 +13,9 @@ export default function Video({
   sumnailUrl,
   videoTitle,
   videoUrl,
-  listTitle,
-}: VideoProps) {
+}: Readonly<VideoProps>) {
   const [currentBookmarkList, setCurrentBookmarkList] = useState<string[]>([]);
 
-  console.log("test");
   const toggleBookmark = () => {
     let currentBookmark = JSON.parse(
       localStorage.getItem("infuse-bookmark") || "[]"

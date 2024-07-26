@@ -13,6 +13,7 @@ export type TranslationDataType = {
   "road-to-kingdom": string;
   monotree: string;
   "view-all": string;
+  bookmark: string;
 };
 
 export interface VideoData {
