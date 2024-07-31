@@ -17,4 +17,5 @@ export const enData: TranslationDataType = {
   monotree: "Monotree Session Behind",
   "view-all": "View all",
   bookmark: "Bookmark video",
+  isEmpty: "isEmpty :(",
 };

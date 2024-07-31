@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["img.youtube.com", "www.youtube.com"],
+    domains: ["img.youtube.com"],
   },
   reactStrictMode: true,
 };

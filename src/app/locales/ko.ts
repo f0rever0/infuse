@@ -17,4 +17,5 @@ export const koData: TranslationDataType = {
   monotree: "모노트리 세션 비하인드",
   "view-all": "전체보기",
   bookmark: "북마크한 동영상",
+  isEmpty: "북마크한 동영상이 없습니다.",
 };

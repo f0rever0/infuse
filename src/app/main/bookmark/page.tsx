@@ -11,12 +11,15 @@ function BookmarkVideoList() {
   const currentLanguage = searchParams.get("currentLanguage");
   const title = translateLanguage(currentLanguage ?? "ko", "bookmark");
   const [videoList, setVideoList] = useState<string[]>([]);
+  const [isEmpty, setIsEmpty] = useState<boolean>(true);
 
   useEffect(() => {
     const localBookmarkVideoList = localStorage.getItem("infuse-bookmark");
-    if (localBookmarkVideoList) {
+    if (localBookmarkVideoList?.length) {
+      setIsEmpty(false);
       setVideoList(JSON.parse(localBookmarkVideoList));
     } else {
+      setIsEmpty(true);
       setVideoList([]);
     }
   }, []);
@@ -26,12 +29,16 @@ function BookmarkVideoList() {
       <h2 className="text-white bold-24 py-4">{title}</h2>
       <div className="flex justify-center -ml-4">
         <main className="flex flex-wrap px-4 gap-2 justify-center">
-          sdfds
-          {videoList.length === 0 ? (
-            <div>북마크한 동영상이 없습니다.</div>
+          {isEmpty ? (
+            <div className="text-white bold-18 py-4">
+              {translateLanguage(currentLanguage ?? "ko", "isEmpty")}
+            </div>
           ) : (
             <>
               {videoList.map((videoUrl: string) => {
+                const urlParams = new URLSearchParams(new URL(videoUrl).search);
+                const videoCode = urlParams.get("v");
+
                 return (
                   // TODO : view-all과 함께 비디오 컴포넌트로 분리
                   <div
@@ -42,7 +49,7 @@ function BookmarkVideoList() {
                       <Image
                         layout="fill"
                         objectFit="cover"
-                        src={`${videoUrl}/0.jpg`}
+                        src={`https://img.youtube.com/vi/${videoCode}/0.jpg`}
                         alt={`${videoUrl} 썸네일`}
                       />
                     </Link>

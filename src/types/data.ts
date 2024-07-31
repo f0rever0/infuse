@@ -14,6 +14,7 @@ export type TranslationDataType = {
   monotree: string;
   "view-all": string;
   bookmark: string;
+  isEmpty: string;
 };
 
 export interface VideoData {
