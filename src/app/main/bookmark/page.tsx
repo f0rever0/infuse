@@ -11,17 +11,12 @@ function BookmarkVideoList() {
   const currentLanguage = searchParams.get("currentLanguage");
   const title = translateLanguage(currentLanguage ?? "ko", "bookmark");
   const [videoList, setVideoList] = useState<string[]>([]);
-  const [isEmpty, setIsEmpty] = useState<boolean>(true);
 
   useEffect(() => {
-    const localBookmarkVideoList = localStorage.getItem("infuse-bookmark");
-    if (localBookmarkVideoList?.length) {
-      setIsEmpty(false);
-      setVideoList(JSON.parse(localBookmarkVideoList));
-    } else {
-      setIsEmpty(true);
-      setVideoList([]);
-    }
+    const localBookmarkVideoList = JSON.parse(
+      localStorage.getItem("infuse-bookmark") || "[]"
+    );
+    setVideoList(localBookmarkVideoList);
   }, []);
 
   return (
@@ -29,7 +24,7 @@ function BookmarkVideoList() {
       <h2 className="text-white bold-24 py-4">{title}</h2>
       <div className="flex justify-center -ml-4">
         <main className="flex flex-wrap px-4 gap-2 justify-center">
-          {isEmpty ? (
+          {videoList.length === 0 ? (
             <div className="text-white bold-18 py-4">
               {translateLanguage(currentLanguage ?? "ko", "isEmpty")}
             </div>
@@ -48,7 +43,6 @@ function BookmarkVideoList() {
                     <Link href={videoUrl}>
                       <Image
                         layout="fill"
-                        objectFit="cover"
                         src={`https://img.youtube.com/vi/${videoCode}/0.jpg`}
                         alt={`${videoUrl} 썸네일`}
                       />
