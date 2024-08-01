@@ -15,7 +15,7 @@ function VideoList() {
   const currentLanguage = searchParams.get("currentLanguage");
   const search = searchParams.get("listTitle");
   const listTitle = translateLanguage(
-    currentLanguage || "ko",
+    currentLanguage ?? "ko",
     search as keyof TranslationDataType
   );
 
