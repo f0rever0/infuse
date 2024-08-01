@@ -13,6 +13,7 @@ export default function Video({
   sumnailUrl,
   videoTitle,
   videoUrl,
+  listTitle,
 }: Readonly<VideoProps>) {
   const [currentBookmarkList, setCurrentBookmarkList] = useState<string[]>([]);
 
