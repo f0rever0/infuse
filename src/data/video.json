@@ -293,6 +293,11 @@
     "title": "radio",
     "list": [
       {
+        "sumnailUrl": "https://img.youtube.com/vi/frZlXApT27w/0.jpg",
+        "videoTitle": "240731 아이돌 라디오",
+        "videoUrl": "https://www.youtube.com/watch?v=frZlXApT27w"
+      },
+      {
         "sumnailUrl": "https://img.youtube.com/vi/xUmlKMUS_aU/0.jpg",
         "videoTitle": "240415 아이돌 라디오",
         "videoUrl": "https://www.youtube.com/watch?v=xUmlKMUS_aU"
@@ -338,6 +343,11 @@
     "title": "official-entertain",
     "list": [
       {
+        "sumnailUrl": "https://img.youtube.com/vi/bf1dCtTPjnA/0.jpg",
+        "videoTitle": "리얼 오프타임 온앤오프",
+        "videoUrl": "https://www.youtube.com/watch?v=bf1dCtTPjnA"
+      },
+      {
         "sumnailUrl": "https://img.youtube.com/vi/SeC5-y-A51g/0.jpg",
         "videoTitle": "다이브 인 투 온앤오프",
         "videoUrl": "https://www.youtube.com/watch?v=SeC5-y-A51g&list=PLMdjQQWLMWRvAGne-BxmKHYxjr_AIGz7Y&index=3"
@@ -382,6 +392,11 @@
   {
     "title": "youtube-entertain",
     "list": [
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/HxUoJwVKnoA/0.jpg",
+        "videoTitle": "마이아티필름",
+        "videoUrl": "https://www.youtube.com/watch?v=HxUoJwVKnoA"
+      },
       {
         "sumnailUrl": "https://img.youtube.com/vi/TH2QEPVlbG4/0.jpg",
         "videoTitle": "제대로 가보자고 1화",
