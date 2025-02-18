@@ -60,9 +60,6 @@ function BookmarkVideoList() {
 }
 
 export default function BookmarkPage() {
-  const searchParams = useSearchParams();
-  const currentLanguage = searchParams.get("currentLanguage");
-
   return (
     <Suspense fallback={<p>Loading video...</p>}>
       <BookmarkVideoList />

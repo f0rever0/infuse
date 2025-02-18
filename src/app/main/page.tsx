@@ -1,21 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useState, useRef, useCallback } from "react";
-import Image from "next/image";
-import video from "@/data/video.json";
-import VideoList from "@/components/main/VideoList";
-import Banner from "@/components/main/Banner";
-import Footer from "@/components/main/Footer";
-import Header from "@/components/main/Header";
-import Link from "next/link";
-
-import light_stick from "@/assets/images/light_stick.jpg";
-import icon_earth from "@/assets/icons/icon_earth.png";
-import icon_bookmark_line from "@/assets/icons/icon-bookmark-line.png";
-import { translateLanguage } from "@/utils/translate";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import VideoList from "@/components/main/VideoList";
+import video from "@/data/video.json";
 
-export default function MainPage() {
+function MainPageContent() {
   const searchParams = useSearchParams();
   const currentLanguage = searchParams.get("currentLanguage") || "";
   const listTitle = searchParams.get("listTitle");
@@ -40,23 +30,24 @@ export default function MainPage() {
   }, [listTitle]);
 
   return (
-    <>
-      {/* <Banner currentLanguage={currentLanguage} /> */}
-      <section className="py-[64px] bg-[#f5f3ee] text-[#121212] px-8">
-        <Suspense fallback={<p>Loading...</p>}>
-          {video.map((data) => {
-            return (
-              <VideoList
-                currentLanguage={currentLanguage}
-                title={data.title}
-                list={data.list}
-                key={data.title}
-                id={data.title}
-              />
-            );
-          })}
-        </Suspense>
-      </section>
-    </>
+    <section className="py-[64px] bg-[#f5f3ee] text-[#121212] px-8">
+      {video.map((data) => (
+        <VideoList
+          currentLanguage={currentLanguage}
+          title={data.title}
+          list={data.list}
+          key={data.title}
+          id={data.title}
+        />
+      ))}
+    </section>
+  );
+}
+
+export default function MainPage() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <MainPageContent />
+    </Suspense>
   );
 }
