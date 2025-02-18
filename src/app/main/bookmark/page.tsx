@@ -9,6 +9,7 @@ import Image from "next/image";
 function BookmarkVideoList() {
   const searchParams = useSearchParams();
   const currentLanguage = searchParams.get("currentLanguage");
+
   const title = translateLanguage(currentLanguage ?? "ko", "bookmark");
   const [videoList, setVideoList] = useState<string[]>([]);
 
@@ -20,8 +21,8 @@ function BookmarkVideoList() {
   }, []);
 
   return (
-    <section className="h-full min-h-screen mb-4">
-      <h2 className="text-white bold-24 py-4">{title}</h2>
+    <section className="h-full min-h-screen mb-4 py-[64px] px-8  bg-[#f5f3ee] text-[#121212]">
+      <h2 className=" text-[#121212] bold-24 py-4">{title}</h2>
       <div className="flex justify-center -ml-4">
         <main className="flex flex-wrap px-4 gap-2 justify-center">
           {videoList.length === 0 ? (
@@ -59,6 +60,9 @@ function BookmarkVideoList() {
 }
 
 export default function BookmarkPage() {
+  const searchParams = useSearchParams();
+  const currentLanguage = searchParams.get("currentLanguage");
+
   return (
     <Suspense fallback={<p>Loading video...</p>}>
       <BookmarkVideoList />

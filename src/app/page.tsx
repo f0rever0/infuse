@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import * as amplitude from "@amplitude/analytics-browser";
 import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
 import Link from "next/link";
+import video from "@/data/video.json";
+import { translateLanguage } from "@/utils/translate";
+import Header from "@/components/main/Header";
+import Footer from "@/components/main/Footer";
+import { track } from "@amplitude/analytics-browser";
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
 
@@ -20,51 +25,55 @@ export default function Home() {
   const [blink, setBlink] = useState<boolean>(true);
   const [reverse, setReverse] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (charIndex === word[currentWordIndex].length + 1 && !reverse) {
-      setReverse(true);
-      return;
-    }
-
-    if (charIndex === 0 && reverse) {
-      setReverse(false);
-      setCurrentWordIndex((prev) => (prev + 1) % word.length);
-      return;
-    }
-
-    const timeout = setTimeout(
-      () => {
-        setCharIndex((prev) => prev + (reverse ? -1 : 1));
-      },
-      reverse ? 100 : 200
-    );
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, currentWordIndex, reverse]);
+  const languageRef = useRef<HTMLElement>(null);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState<boolean>(false);
+  const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
 
   useEffect(() => {
-    const blinkTimeout = setTimeout(() => {
-      setBlink((prev) => !prev);
-    }, 400);
-    return () => clearTimeout(blinkTimeout);
-  }, [blink]);
+    const localStorageLang = localStorage.getItem("infuse-language");
+    if (localStorageLang) {
+      setCurrentLanguage(localStorageLang);
+    } else {
+      localStorage.setItem("infuse-language", currentLanguage);
+    }
+  }, []);
+
+  const changeLanguage = (lang: string) => {
+    setCurrentLanguage(lang);
+    localStorage.setItem("infuse-language", lang);
+    location.reload();
+    setIsLanguageMenuOpen(false);
+  };
 
   return (
-    <div className="font-sans bg-black text-light-gray w-full h-screen flex justify-center items-center flex-col">
-      <section className="flex flex-col justify-center items-center bold-36 sm:bold-96 lg:flex-row">
-        <span className="mr-0 lg:mr-8 ">infuse</span>
-        <div>
-          <span className="mr-4 lg:mr-6 sm:mr-8">into</span>
-          <span className="text-shadow-neon">
-            {`${word[currentWordIndex].substring(0, charIndex)}${
-              blink ? "|" : " "
-            }`}
-          </span>
+    <>
+      <Header />
+      <div className="font-sans bg-[#f5f3ee] text-[#121212] w-full h-screen flex flex-col justify-center items-center">
+        <div className="text-center mb-4 font-medium text-[#121212]">
+          {currentLanguage === "en" ? "Hi! fuse! 💡" : "안녕하세요, 퓨즈! 💡"}
         </div>
-      </section>
-      <Link href="/main" className="bold-24 text-dark-gray cursor-pointer">
-        press to start
-      </Link>
-    </div>
+
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto p-4">
+          {video.map((data) => (
+            <Link
+              key={data.title}
+              href={{
+                pathname: "/main",
+                query: {
+                  listTitle: data.title,
+                },
+              }}
+              className="w-full max-w-[360px] justify-self-center font-sans bg-[#f5f3ee] border-2 border-[#bc2a31] text-[#bc2a31] px-8 py-3 rounded font-medium text-center hover:bg-[#bc2a31] hover:text-[#f5f3ee] transition-colors"
+              onClick={() => {
+                track(`index video list button : ${data.title}`);
+              }}
+            >
+              {translateLanguage(currentLanguage, data.title)}
+            </Link>
+          ))}
+        </section>
+      </div>
+      <Footer />
+    </>
   );
 }

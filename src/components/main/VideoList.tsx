@@ -9,11 +9,13 @@ interface VideoListProps {
   title: string;
   list: VideoData[];
   currentLanguage: string;
+  id: string;
 }
 export default function VideoList({
   currentLanguage,
   title,
   list,
+  id,
 }: Readonly<VideoListProps>) {
   const listTitle = translateLanguage(
     currentLanguage,
@@ -21,9 +23,9 @@ export default function VideoList({
   );
 
   return (
-    <section className="h-full mb-4 ">
+    <section className="h-full mt-6 " id={id}>
       <article className="flex flex-row items-end">
-        <h2 className="text-white bold-24">{listTitle}</h2>
+        <h2 className="text-[#121212] bold-24">{listTitle}</h2>
         <Link
           href={{
             pathname: "/main/viewAll",
@@ -32,7 +34,7 @@ export default function VideoList({
               listTitle: title,
             },
           }}
-          className="text-gray-400 bold-16 ml-2 mb-1"
+          className="text=[#757575]bold-16 ml-4 mb-1"
           onClick={() => {
             track(`view all : ${listTitle}`);
           }}

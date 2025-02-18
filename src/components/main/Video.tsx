@@ -66,7 +66,7 @@ export default function Video({
           src={sumnailUrl}
           alt={`${videoTitle} 썸네일`}
           title={videoTitle}
-          className="relative z-0 transform transition-transform duration-300 hover:scale-105"
+          className="relative z-0 transform transition-transform duration-300"
         />
       </Link>
     </div>
