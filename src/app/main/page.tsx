@@ -17,7 +17,7 @@ import { useSearchParams } from "next/navigation";
 
 export default function MainPage() {
   const searchParams = useSearchParams();
-  const currentLanguage = searchParams.get("currentLanguage");
+  const currentLanguage = searchParams.get("currentLanguage") || "";
   const listTitle = searchParams.get("listTitle");
 
   useEffect(() => {
