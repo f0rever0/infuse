@@ -9,6 +9,7 @@ import { translateLanguage } from "@/utils/translate";
 import Header from "@/components/main/Header";
 import Footer from "@/components/main/Footer";
 import { track } from "@amplitude/analytics-browser";
+import { TranslationDataType } from "@/types/data";
 
 const AMPLITUDE_API_KEY = process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY ?? "";
 
@@ -54,8 +55,7 @@ export default function Home() {
             ? "Hello! fuse! 💡"
             : `안녕하세요, 퓨즈! 💡`}
         </div>
-
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl m-auto p-4">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl p-4">
           {video.map((data) => (
             <Link
               key={data.title}
@@ -70,7 +70,10 @@ export default function Home() {
                 track(`index video list button : ${data.title}`);
               }}
             >
-              {translateLanguage(currentLanguage, data.title)}
+              {translateLanguage(
+                currentLanguage,
+                data.title as keyof TranslationDataType
+              )}
             </Link>
           ))}
         </section>
