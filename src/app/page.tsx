@@ -48,12 +48,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="font-sans bg-[#f5f3ee] text-[#121212] w-full h-screen flex flex-col justify-center items-center">
-        <div className="text-center mb-4 font-medium text-[#121212]">
-          {currentLanguage === "en" ? "Hi! fuse! 💡" : "안녕하세요, 퓨즈! 💡"}
+      <div className="font-sans bg-[#f5f3ee] text-[#121212] w-full min-h-screen flex flex-col justify-center items-center py-[128px]">
+        <div className="text-center mb-4 text-xl text-[#121212] sm:text-2xl">
+          {currentLanguage === "en"
+            ? "Hello! fuse! 💡"
+            : `안녕하세요, 퓨즈! 💡`}
         </div>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto p-4">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl m-auto p-4">
           {video.map((data) => (
             <Link
               key={data.title}

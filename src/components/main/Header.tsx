@@ -65,7 +65,7 @@ export default function MainPage() {
               track("header home button");
             }}
           >
-            infuse into onf
+            infuse
           </Link>
         </div>
         <div className="flex justify-center items-center">
