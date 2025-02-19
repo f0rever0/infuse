@@ -203,9 +203,19 @@
     "title": "stage",
     "list": [
       {
+        "sumnailUrl": "https://img.youtube.com/vi/Pc5-GcxiOLM/0.jpg",
+        "videoTitle": "The Stranger 댄스 소사이어티",
+        "videoUrl": "https://www.youtube.com/watch?v=Pc5-GcxiOLM"
+      },
+      {
         "sumnailUrl": "https://img.youtube.com/vi/2m_VUbaq9Us/0.jpg",
         "videoTitle": "라이징보이스 온앤오프",
         "videoUrl": "https://www.youtube.com/watch?v=2m_VUbaq9Us"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/Ra7E3pryZUs/0.jpg",
+        "videoTitle": "리무진서비스 민균",
+        "videoUrl": "https://www.youtube.com/watch?v=Ra7E3pryZUs"
       },
       {
         "sumnailUrl": "https://img.youtube.com/vi/mkHdPWKzQEw/0.jpg",
@@ -213,15 +223,16 @@
         "videoUrl": "https://www.youtube.com/watch?v=mkHdPWKzQEw"
       },
       {
-        "sumnailUrl": "https://img.youtube.com/vi/T1MfZTjHRKA/0.jpg",
-        "videoTitle": "구스범스 플레이 컬러풀",
-        "videoUrl": "https://www.youtube.com/watch?v=T1MfZTjHRKA"
-      },
-      {
         "sumnailUrl": "https://img.youtube.com/vi/kblNggkN3L8/0.jpg",
         "videoTitle": "바이 마이 몬스터 댄스이어",
         "videoUrl": "https://www.youtube.com/watch?v=kblNggkN3L8"
       },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/T1MfZTjHRKA/0.jpg",
+        "videoTitle": "구스범스 플레이 컬러풀",
+        "videoUrl": "https://www.youtube.com/watch?v=T1MfZTjHRKA"
+      },
+
       {
         "sumnailUrl": "https://img.youtube.com/vi/dG9wL7Zhho8/0.jpg",
         "videoTitle": "셜록 커버",
