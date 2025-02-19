@@ -24,8 +24,8 @@ export default function VideoList({
 
   return (
     <section className="h-full mt-6 " id={id}>
-      <article className="flex flex-row items-end">
-        <h2 className="text-[#121212] bold-24">{listTitle}</h2>
+      <article className="flex flex-row items-end mb-1">
+        <h2 className="text-[#121212] bold-16 md:bold-24">{listTitle}</h2>
         <Link
           href={{
             pathname: "/main/viewAll",
@@ -34,7 +34,7 @@ export default function VideoList({
               listTitle: title,
             },
           }}
-          className="text=[#757575]bold-16 ml-4 mb-1"
+          className="text-[#757575] text-sm md:text-base ml-4 mb-1 md:mb-2"
           onClick={() => {
             track(`view all : ${listTitle}`);
           }}
