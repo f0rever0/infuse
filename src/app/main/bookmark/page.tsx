@@ -33,7 +33,7 @@ function BookmarkVideoList() {
       <div className="flex justify-center -ml-4 m-auto">
         <main className="flex flex-wrap gap-2 justify-center">
           {videoList.length === 0 ? (
-            <div className="text-white bold-18 py-4">
+            <div className="text-[#121212] bold-18 py-4">
               {translateLanguage(currentLanguage ?? "ko", "isEmpty")}
             </div>
           ) : (
