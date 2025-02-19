@@ -65,7 +65,7 @@ export default function Home() {
                   listTitle: data.title,
                 },
               }}
-              className="w-full max-w-[360px] justify-self-center font-sans bg-[#f5f3ee] border-2 border-[#bc2a31] text-[#bc2a31] px-8 py-3 rounded font-medium text-center hover:bg-[#bc2a31] hover:text-[#f5f3ee] transition-colors"
+              className="w-full max-w-[360px] justify-self-center font-sans bg-[#f5f3ee] border-2 border-[#bc2a31] text-[#bc2a31] px-3 md:px-8 md:py-3 py-3 rounded font-medium text-center hover:bg-[#bc2a31] hover:text-[#f5f3ee] transition-colors"
               onClick={() => {
                 track(`index video list button : ${data.title}`);
               }}

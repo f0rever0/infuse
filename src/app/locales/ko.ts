@@ -17,7 +17,7 @@ export const koData: TranslationDataType = {
   "on-flim": "ON FILM",
   "road-to-kingdom": "로드 투 킹덤",
   monotree: "모노트리 세션 비하인드",
-  "view-all": "펼처보기",
+  "view-all": "펼쳐보기",
   bookmark: "북마크한 동영상",
   isEmpty: "북마크한 동영상이 없습니다.",
 };

@@ -21,10 +21,10 @@ function BookmarkVideoList() {
   }, []);
 
   return (
-    <section className="h-full min-h-screen mb-4 py-[64px] px-8  bg-[#f5f3ee] text-[#121212]">
+    <section className="h-full min-h-screen mb-4 bg-[#f5f3ee] px-3 md:px-8 py-[64px]">
       <h2 className=" text-[#121212] bold-24 py-4">{title}</h2>
-      <div className="flex justify-center -ml-4">
-        <main className="flex flex-wrap px-4 gap-2 justify-center">
+      <div className="flex justify-center -ml-4 m-auto">
+        <main className="flex flex-wrap gap-2 justify-center">
           {videoList.length === 0 ? (
             <div className="text-white bold-18 py-4">
               {translateLanguage(currentLanguage ?? "ko", "isEmpty")}

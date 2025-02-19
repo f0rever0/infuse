@@ -22,10 +22,10 @@ function VideoList() {
   const videoList = video.find((item) => item.title === search);
 
   return (
-    <section className="h-full min-h-screen mb-4 bg-[#f5f3ee] px-8 py-[64px]">
+    <section className="h-full min-h-screen mb-4 bg-[#f5f3ee] px-3 md:px-8 py-[64px]">
       <h2 className="text-[#121212] bold-24 py-4">{listTitle}</h2>
-      <div className="flex justify-center -ml-4">
-        <main className="flex flex-wrap px-4 gap-2 justify-center">
+      <div className="flex justify-center -ml-4 m-auto">
+        <main className="flex flex-wrap gap-2 justify-center">
           {videoList?.list.map((data: VideoData) => {
             return (
               <div

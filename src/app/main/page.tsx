@@ -30,7 +30,7 @@ function MainPageContent() {
   }, [listTitle]);
 
   return (
-    <section className="py-[64px] bg-[#f5f3ee] text-[#121212] px-8">
+    <section className="py-[64px] bg-[#f5f3ee] text-[#121212] px-3 md:px-8">
       {video.map((data) => (
         <VideoList
           currentLanguage={currentLanguage}

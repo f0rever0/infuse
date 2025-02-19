@@ -54,7 +54,7 @@ export default function MainPage() {
 
   return (
     <>
-      <nav className="z-[1000] bg-[#f5f3ee] px-8 flex items-center w-full justify-between border-b-2 border-[#dddddd] position: fixed h-[64px]">
+      <nav className="z-[1000] bg-[#f5f3ee] px-3 md:px-8 md:py-3 flex items-center w-full justify-between border-b-2 border-[#dddddd] position: fixed h-[64px]">
         <div className="flex flex-row items-center">
           <Link
             className="font-sans bold-24 text-[#12122]"
@@ -67,62 +67,20 @@ export default function MainPage() {
           >
             infuse
           </Link>
-        </div>
-        <div className="flex justify-center items-center">
-          <Link
-            href={{
-              pathname: "/main",
-            }}
-            className="mr-4 font-sans text-[#121212] font-medium text-lg relative cursor-pointer pt-3 width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
-            onClick={() => {
-              track("header main button");
-            }}
-          >
-            {/* <Image
-                src={icon_bookmark_line}
-                alt="북마크"
-                width={20}
-                height={20}
-              /> */}
-
-            {currentLanguage === "en" ? "main" : "전체보기"}
-          </Link>
-          <Link
-            href={{
-              pathname: "/main/bookmark",
-              query: {
-                currentLanguage,
-              },
-            }}
-            className="mr-4 font-sans text-[#121212] font-medium text-lg relative cursor-pointer pt-3 width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
-            onClick={() => {
-              track("header bookmark button");
-            }}
-          >
-            {/* <Image
-                src={icon_bookmark_line}
-                alt="북마크"
-                width={20}
-                height={20}
-              /> */}
-
-            {currentLanguage === "en" ? "bookmark" : "북마크"}
-          </Link>
           <section
-            className="font-sans text-[#121212] font-medium text-lg relative cursor-pointer mr-4 pt-3 width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
+            className="font-sans text-[#121212] font-medium text-lg relative cursor-pointer ml-4 width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
             ref={languageRef}
             onClick={() => setIsLanguageMenuOpen((prev) => !prev)}
           >
-            {currentLanguage === "en" ? "language" : "언어"}
-            {/* <Image
-                className="mr-2"
-                src={icon_earth}
-                alt="언어 선택"
-                width={20}
-                height={20}
-              /> */}
+            <Image
+              className="mr-2"
+              src={icon_earth}
+              alt="언어 선택"
+              width={20}
+              height={20}
+            />
             {isLanguageMenuOpen && (
-              <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50 mt-2">
+              <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50">
                 <button
                   className={`regular-18 ${
                     currentLanguage === "ko" ? "text-white" : "text-dark-gray"
@@ -150,6 +108,47 @@ export default function MainPage() {
               </ul>
             )}
           </section>
+        </div>
+        <div className="flex justify-center items-center">
+          <Link
+            href={{
+              pathname: "/main",
+            }}
+            className="mr-4 font-sans text-[#121212] font-medium text-lg relative cursor-pointer width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
+            onClick={() => {
+              track("header main button");
+            }}
+          >
+            {/* <Image
+                src={icon_bookmark_line}
+                alt="북마크"
+                width={20}
+                height={20}
+              /> */}
+
+            {currentLanguage === "en" ? "main" : "전체보기"}
+          </Link>
+          <Link
+            href={{
+              pathname: "/main/bookmark",
+              query: {
+                currentLanguage,
+              },
+            }}
+            className="mr-4 font-sans text-[#121212] font-medium text-lg relative cursor-pointer width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
+            onClick={() => {
+              track("header bookmark button");
+            }}
+          >
+            {/* <Image
+                src={icon_bookmark_line}
+                alt="북마크"
+                width={20}
+                height={20}
+              /> */}
+
+            {currentLanguage === "en" ? "bookmark" : "북마크"}
+          </Link>
         </div>
         {/* <section className="text-white flex flex-row text-left justify-end items-end mb-4 pt-4 pr-4">
           <p className="mr-2">
