@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { TranslationDataType, VideoData } from "@/types/data";
 import video from "@/data/video.json";
@@ -12,7 +12,7 @@ function VideoList() {
   // 어떤 비디오의 전체보기 페이지인지 앰플리튜드 심기
 
   const searchParams = useSearchParams();
-  const currentLanguage = searchParams.get("currentLanguage");
+  const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
   const search = searchParams.get("listTitle");
   const listTitle = translateLanguage(
     currentLanguage ?? "ko",
@@ -20,6 +20,15 @@ function VideoList() {
   );
 
   const videoList = video.find((item) => item.title === search);
+
+  useEffect(() => {
+    const localStorageLang = localStorage.getItem("infuse-language");
+    if (localStorageLang) {
+      setCurrentLanguage(localStorageLang);
+    } else {
+      localStorage.setItem("infuse-language", currentLanguage);
+    }
+  });
 
   return (
     <section className="h-full min-h-screen mb-4 bg-[#f5f3ee] px-3 md:px-8 py-[64px]">

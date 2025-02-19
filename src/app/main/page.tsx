@@ -1,16 +1,23 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import VideoList from "@/components/main/VideoList";
 import video from "@/data/video.json";
 
 function MainPageContent() {
   const searchParams = useSearchParams();
-  const currentLanguage = searchParams.get("currentLanguage") || "";
+  const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
   const listTitle = searchParams.get("listTitle");
 
   useEffect(() => {
+    const localStorageLang = localStorage.getItem("infuse-language");
+    if (localStorageLang) {
+      setCurrentLanguage(localStorageLang);
+    } else {
+      localStorage.setItem("infuse-language", currentLanguage);
+    }
+
     if (listTitle) {
       const timer = setTimeout(() => {
         const element = document.getElementById(listTitle);

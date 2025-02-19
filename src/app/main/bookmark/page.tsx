@@ -8,12 +8,19 @@ import Image from "next/image";
 
 function BookmarkVideoList() {
   const searchParams = useSearchParams();
-  const currentLanguage = searchParams.get("currentLanguage");
+  const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
 
   const title = translateLanguage(currentLanguage ?? "ko", "bookmark");
   const [videoList, setVideoList] = useState<string[]>([]);
 
   useEffect(() => {
+    const localStorageLang = localStorage.getItem("infuse-language");
+    if (localStorageLang) {
+      setCurrentLanguage(localStorageLang);
+    } else {
+      localStorage.setItem("infuse-language", currentLanguage);
+    }
+
     const localBookmarkVideoList = JSON.parse(
       localStorage.getItem("infuse-bookmark") || "[]"
     );
