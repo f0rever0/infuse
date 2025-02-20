@@ -2,6 +2,7 @@ export type TranslationDataType = {
   nickname: string;
   "by-my-monster-description": string;
   "the-stranger-description": string;
+  "the stranger": string;
   mv: string;
   record: string;
   practice: string;
