@@ -39,7 +39,7 @@ function VideoList() {
             return (
               <div
                 key={data.videoUrl}
-                className="relative cursor-pointer w-[156px] h-[117px] sm:w-[208px] sm:h-[156px] md:w-[312px] md:h-[234px] lg:w-[416px] lg:h-[312px]"
+                className="relative cursor-pointer w-[312px] h-[234px] md:w-[312px] md:h-[234px] lg:w-[416px] lg:h-[312px]"
               >
                 <Link href={data.videoUrl}>
                   <Image
@@ -50,6 +50,9 @@ function VideoList() {
                     title={data.videoTitle}
                   />
                 </Link>
+                <div className="px-1 text-white absolute z-1000 bottom-0 overflow-hidden text-ellipsis whitespace-nowrap w-full">
+                  {data.videoTitle}
+                </div>
               </div>
             );
           })}

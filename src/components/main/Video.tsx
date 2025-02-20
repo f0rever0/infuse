@@ -69,6 +69,9 @@ export default function Video({
           className="relative z-0 transform transition-transform duration-300"
         />
       </Link>
+      <div className="px- 1 text-white absolute z-1000 bottom-0 overflow-hidden text-ellipsis whitespace-nowrap w-full">
+        {videoTitle}
+      </div>
     </div>
   );
 }
