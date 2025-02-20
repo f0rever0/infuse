@@ -46,7 +46,7 @@ function BookmarkVideoList() {
                   // TODO : view-all과 함께 비디오 컴포넌트로 분리
                   <div
                     key={videoUrl}
-                    className="relative cursor-pointer w-[156px] h-[117px] md:w-[312px] md:h-[234px] lg:w-[416px] lg:h-[312px]"
+                    className="relative cursor-pointer w-[312px] h-[234px] md:w-[312px] md:h-[234px] lg:w-[416px] lg:h-[312px]"
                   >
                     <Link href={videoUrl}>
                       <Image
@@ -55,9 +55,6 @@ function BookmarkVideoList() {
                         alt={`${videoUrl} 썸네일`}
                       />
                     </Link>
-                    <div className="px-1 text-white absolute z-1000 bottom-0 overflow-hidden text-ellipsis whitespace-nowrap w-full">
-                      {data.videoTitle}
-                    </div>
                   </div>
                 );
               })}
