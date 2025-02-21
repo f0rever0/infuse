@@ -15,6 +15,10 @@ export default function RootLayout({
         <link rel="icon" href="/icon.ico" />
         <link rel="apple-touch-icon" href="/icon.ico"></link>
         <meta name="theme-color" content="#000000" />
+        <meta property="og:title" content="infuse" />
+        <meta property="og:type" content="온앤오프 동영상 모음 페이지" />
+        <meta property="og:image" content="/icon.ico" />
+        <meta property="og:article:author" content="@infuse_into_onf" />
       </head>
       <body className={`${pretendard.variable} font-pretendard`}>
         {children}

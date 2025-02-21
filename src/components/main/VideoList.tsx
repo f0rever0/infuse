@@ -30,7 +30,6 @@ export default function VideoList({
           href={{
             pathname: "/main/viewAll",
             query: {
-              currentLanguage,
               listTitle: title,
             },
           }}
