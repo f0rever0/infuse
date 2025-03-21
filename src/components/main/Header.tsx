@@ -8,7 +8,7 @@ import Banner from "@/components/main/Banner";
 import Footer from "@/components/main/Footer";
 import Link from "next/link";
 import { track } from "@amplitude/analytics-browser";
-import light_stick from "@/assets/images/light_stick.jpg";
+import icon_infuse from "@/assets/icons/icon_infuse.svg";
 import icon_earth from "@/assets/icons/icon_earth.png";
 import icon_bookmark_line from "@/assets/icons/icon-bookmark-line.png";
 import { translateLanguage } from "@/utils/translate";
@@ -65,20 +65,20 @@ export default function MainPage() {
               track("header home button");
             }}
           >
-            infuse
+            <Image
+              className="mr-3"
+              src={icon_infuse}
+              alt="메인"
+              width={95}
+              height={20}
+            />
           </Link>
           <section
-            className="font-sans text-[#121212] font-medium text-lg relative cursor-pointer ml-4 width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
+            className="font-sans text-[#121212] font-medium text-lg relative cursor-pointer width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
             ref={languageRef}
             onClick={() => setIsLanguageMenuOpen((prev) => !prev)}
           >
-            <Image
-              className="mr-2"
-              src={icon_earth}
-              alt="언어 선택"
-              width={20}
-              height={20}
-            />
+            <Image src={icon_earth} alt="언어 선택" width={18} height={18} />
             {isLanguageMenuOpen && (
               <ul className="absolute top-8 left-0 bg-black  p-2 rounded z-50">
                 <button
