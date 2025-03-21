@@ -9,16 +9,16 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <title>infuse</title>
-        <meta name="description" content="온앤오프 동영상 모음 페이지" />
+        <title>온앤오프 팬페이지 | infuse</title>
+        <meta name="description" content="온앤오프 팬페이지입니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.ico" />
-        <link rel="apple-touch-icon" href="/icon.ico"></link>
+        <link rel="icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg"></link>
         <meta name="theme-color" content="#000000" />
-        <meta property="og:title" content="infuse" />
-        <meta property="og:description" content="온앤오프 동영상 모음 페이지" />
+        <meta property="og:title" content="온앤오프 팬페이지 | infuse" />
+        <meta property="og:description" content="온앤오프 팬페이지입니다." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/icon.ico" />
+        <meta property="og:image" content="/og_sumnail.png" />
         <meta property="og:article:author" content="@infuse_into_onf" />
       </head>
       <body className={`${pretendard.variable} font-pretendard`}>
