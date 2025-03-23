@@ -138,7 +138,7 @@ export default function Page() {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="py-[64px] bg-[#f5f3ee] text-[#121212] ">
+    <div className="font-sans py-[64px] bg-[#f5f3ee] text-[#121212] ">
       <div className="p-4 w-full mx-auto sm:w-[640px] min-h-[calc(100vh-64px)] h-auto">
         {/* <p className="text-md font-normal text-center">
           해당 기능은 한국어만 지원됩니다.
