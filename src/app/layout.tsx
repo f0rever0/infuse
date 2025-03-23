@@ -13,7 +13,7 @@ export default function RootLayout({
         <meta name="description" content="온앤오프 팬페이지입니다." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.svg" />
-        <link rel="apple-touch-icon" href="/icon.svg"></link>
+        <link rel="apple-touch-icon" href="/images/icon.png"></link>
         <meta name="theme-color" content="#000000" />
         <meta property="og:title" content="온앤오프 팬페이지 | infuse" />
         <meta property="og:description" content="온앤오프 팬페이지입니다." />
