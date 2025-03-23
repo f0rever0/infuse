@@ -12,8 +12,11 @@ import light_stick from "@/assets/images/light_stick.jpg";
 import icon_earth from "@/assets/icons/icon_earth.png";
 import icon_bookmark_line from "@/assets/icons/icon-bookmark-line.png";
 import { translateLanguage } from "@/utils/translate";
+import { usePathname } from "next/navigation";
 
 export default function MainPage() {
+  const currentPathname = usePathname();
+
   const languageRef = useRef<HTMLElement>(null);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState<boolean>(false);
   const [currentLanguage, setCurrentLanguage] = useState<string>("ko");
@@ -112,21 +115,34 @@ export default function MainPage() {
         <div className="flex justify-center items-center">
           <Link
             href={{
+              pathname: "/playlist",
+            }}
+            className={`mr-3  font-sans text-base relative cursor-pointer width-[20px] height-[20px] transition-colors ${
+              currentPathname === "/playlist"
+                ? "text-[#bc2a31] font-semibold"
+                : "text-[#121212] font-medium"
+            } hover:text-[#bc2a31]`}
+            onClick={() => {
+              track("header playlist button");
+            }}
+          >
+            {currentLanguage === "en" ? "playlist" : "플레이리스트"}
+          </Link>
+          <Link
+            href={{
               pathname: "/main",
             }}
-            className="mr-4 font-sans text-[#121212] font-medium text-lg relative cursor-pointer width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
+            className={`mr-3  font-sans text-base relative cursor-pointer width-[20px] height-[20px] transition-colors ${
+              currentPathname !== "/main/bookmark" &&
+              currentPathname.includes("main")
+                ? "text-[#bc2a31] font-semibold"
+                : "text-[#121212] font-medium"
+            } hover:text-[#bc2a31]`}
             onClick={() => {
               track("header main button");
             }}
           >
-            {/* <Image
-                src={icon_bookmark_line}
-                alt="북마크"
-                width={20}
-                height={20}
-              /> */}
-
-            {currentLanguage === "en" ? "main" : "전체보기"}
+            {currentLanguage === "en" ? "video" : "재생목록"}
           </Link>
           <Link
             href={{
@@ -135,18 +151,15 @@ export default function MainPage() {
                 currentLanguage,
               },
             }}
-            className="mr-4 font-sans text-[#121212] font-medium text-lg relative cursor-pointer width-[20px] height-[20px]  hover:text-[#bc2a31] transition-colors"
+            className={`font-sans font-medium text-base relative cursor-pointer width-[20px] height-[20px] transition-colors ${
+              currentPathname === "/main/bookmark"
+                ? "text-[#bc2a31] font-semibold "
+                : "text-[#121212] font-medium"
+            } hover:text-[#bc2a31]`}
             onClick={() => {
               track("header bookmark button");
             }}
           >
-            {/* <Image
-                src={icon_bookmark_line}
-                alt="북마크"
-                width={20}
-                height={20}
-              /> */}
-
             {currentLanguage === "en" ? "bookmark" : "북마크"}
           </Link>
         </div>
