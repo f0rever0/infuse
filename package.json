@@ -10,9 +10,16 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.8.0",
+    "@notionhq/client": "^2.3.0",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.482.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
