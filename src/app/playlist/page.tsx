@@ -151,6 +151,7 @@ export default function Page() {
                 onClick={() => track("멜론 아이폰으로 듣기")}
               >
                 <Image
+                  unoptimized
                   className="mr-1 rounded-lg"
                   src={icon_melon}
                   alt=""
@@ -166,6 +167,7 @@ export default function Page() {
                 onClick={() => track("멜론 안드로이드로 듣기")}
               >
                 <Image
+                  unoptimized
                   className="mr-1 rounded-lg"
                   src={icon_melon}
                   alt=""

@@ -50,6 +50,7 @@ function BookmarkVideoList() {
                   >
                     <Link href={videoUrl}>
                       <Image
+                        unoptimized
                         layout="fill"
                         src={`https://img.youtube.com/vi/${videoCode}/0.jpg`}
                         alt={`${videoUrl} 썸네일`}

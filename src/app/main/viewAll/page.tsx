@@ -43,6 +43,7 @@ function VideoList() {
               >
                 <Link href={data.videoUrl}>
                   <Image
+                    unoptimized
                     layout="fill"
                     objectFit="cover"
                     src={data.sumnailUrl}
