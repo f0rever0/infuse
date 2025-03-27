@@ -5,6 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
 import icon_melon from "@/assets/icons/icon_melon.png";
 import { track } from "@amplitude/analytics-browser";
+import { DownloadDialog } from "@/components/playlist/DownloadDialog";
 
 const keywordList = [
   "청량한",
@@ -114,7 +115,7 @@ export default function Page() {
         </div>
 
         <button
-          className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90]"
+          className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90] w-full"
           onClick={onSubmit}
           disabled={!selected.length || playlistLoading}
         >
@@ -124,16 +125,22 @@ export default function Page() {
         <div className="text-lg font-semibold mt-8">퓨즈의 플레이리스트</div>
         <ul className="mt-4 p-2 border rounded-md bg-[#e8e6e1]/40">
           {finalPlaylist.length ? (
-            finalPlaylist.map((song, index) => (
-              <li key={index} className="p-2 border-b border-[#d9d6cf]">
-                <span className="font-semibold text-[#121212]">
-                  🎵 {song.songName}
-                  <span className="ml-2 text-[#757575] text-sm">
-                    | {song.songAlbum}
+            <>
+              {finalPlaylist.map((song) => (
+                <li
+                  key={song.songMelonId}
+                  className="p-2 border-b border-[#d9d6cf]"
+                >
+                  <span className="font-semibold text-[#121212]">
+                    🎵 {song.songName}
+                    <span className="ml-2 text-[#757575] text-sm">
+                      | {song.songAlbum}
+                    </span>
                   </span>
-                </span>
-              </li>
-            ))
+                </li>
+              ))}
+              <DownloadDialog />
+            </>
           ) : (
             <p className="text-[#757575]">
               {playlistLoading
@@ -142,7 +149,6 @@ export default function Page() {
             </p>
           )}
         </ul>
-
         {finalPlaylist.length > 0 && (
           <div className="flex flex-row items-center mt-4">
             <a href={`${iosMelon}${melonId}`}>
