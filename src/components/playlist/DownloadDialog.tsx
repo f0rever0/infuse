@@ -34,13 +34,16 @@ export function DownloadDialog({
     toPng(captureRef.current, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "my-image-name.png";
+        link.download = "ONF_playlist.png";
         link.href = dataUrl;
         link.click();
       })
       .catch((err) => {
         console.log(err);
       });
+
+    setPlaylistNickname("");
+    setIsOpen(false);
   }, [captureRef]);
 
   return (
