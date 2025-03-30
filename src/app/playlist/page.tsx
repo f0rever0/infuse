@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
 import icon_melon from "@/assets/icons/icon_melon.png";
@@ -44,6 +44,7 @@ export default function Page() {
   >([]);
   const [melonId, setMelonId] = useState<string>("");
   const [playlistNickname, setPlaylistNickname] = useState<string>("");
+  const captureRef = useRef<HTMLDivElement>(null);
 
   const handleCheckboxChange = (id: string, checked: boolean) => {
     setSelected((prev) =>
@@ -148,6 +149,7 @@ export default function Page() {
                 </li>
               ))}
               <DownloadDialog
+                captureRef={captureRef}
                 playlistNickname={playlistNickname}
                 setPlaylistNickname={setPlaylistNickname}
               />
@@ -198,8 +200,9 @@ export default function Page() {
         )}
       </div>
 
-      <div className="opacity-100 fixed">
+      <div className="opacity-0 fixed">
         <DownloadImage
+          captureRef={captureRef}
           selectedKeyword={selected}
           finalPlaylist={finalPlaylist}
           playlistNickname={playlistNickname}
