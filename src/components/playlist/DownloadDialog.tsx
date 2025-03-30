@@ -12,6 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import html2canvas from "html2canvas";
 import { track } from "@amplitude/analytics-browser";
+import { saveAs } from "file-saver";
 
 interface DownloadDialogProps {
   captureRef: React.RefObject<HTMLDivElement>;
@@ -37,14 +38,11 @@ export function DownloadDialog({
       useCORS: true,
       allowTaint: true,
     }).then((canvas) => {
-      const link = document.createElement("a");
-      document.body.appendChild(link);
-      link.href = canvas.toDataURL("image/png");
-
-      link.download = "ONF_Playlist.png";
-      link.click();
-
-      document.body.removeChild(link);
+      canvas.toBlob((blob) => {
+        if (blob !== null) {
+          saveAs(blob, "ONF_Playlist.png");
+        }
+      });
 
       setPlaylistNickname("");
       setIsOpen(false);
