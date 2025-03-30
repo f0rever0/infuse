@@ -7,10 +7,37 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import html2canvas from "html2canvas";
 
-export function DownloadDialog() {
+interface DownloadDialogProps {
+  playlistNickname: string;
+  setPlaylistNickname: (value: string) => void;
+}
+
+export function DownloadDialog({
+  playlistNickname,
+  setPlaylistNickname,
+}: Readonly<DownloadDialogProps>) {
+  const clickDownloadButton = () => {
+    const target = document.getElementById("download-playlist");
+    if (!target) {
+      return alert("사진 저장에 실패했습니다.");
+    }
+    html2canvas(target, {
+      useCORS: true,
+    }).then((canvas) => {
+      const link = document.createElement("a");
+      document.body.appendChild(link);
+      link.href = canvas.toDataURL("image/png");
+      link.download = "ONF_Playlist.png";
+      link.click();
+      document.body.removeChild(link);
+    });
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -33,12 +60,21 @@ export function DownloadDialog() {
             <Input
               type="text"
               placeholder="닉네임을 입력해주세요."
-              className="col-span-3"
+              className="col-span-4"
+              onChange={(e) => setPlaylistNickname(e.target.value)}
             />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">확인</Button>
+          <DialogClose asChild>
+            <Button
+              disabled={playlistNickname.length === 0}
+              type="submit"
+              onClick={clickDownloadButton}
+            >
+              확인
+            </Button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import icon_melon from "@/assets/icons/icon_melon.png";
 import { track } from "@amplitude/analytics-browser";
 import { DownloadDialog } from "@/components/playlist/DownloadDialog";
+import { DownloadImage } from "@/components/playlist/DownloadImage";
 
 const keywordList = [
   "청량한",
@@ -32,8 +33,17 @@ export default function Page() {
   const [selected, setSelected] = useState<string[]>([]);
   const [notionSongList, setNotionSongList] = useState<any[]>([]);
   const [playlistLoading, setPlaylistLoading] = useState(false);
-  const [finalPlaylist, setFinalPlaylist] = useState<any[]>([]);
-  const [melonId, setMelonId] = useState("");
+  const [finalPlaylist, setFinalPlaylist] = useState<
+    {
+      songName: string;
+      songAlbum: string;
+      songMelonId: string;
+      songKeyword: string;
+      songWeight: number;
+    }[]
+  >([]);
+  const [melonId, setMelonId] = useState<string>("");
+  const [playlistNickname, setPlaylistNickname] = useState<string>("");
 
   const handleCheckboxChange = (id: string, checked: boolean) => {
     setSelected((prev) =>
@@ -91,12 +101,11 @@ export default function Page() {
   }, [notionSongList]);
 
   return (
-    <div className="font-sans py-16 bg-[#f5f3ee] text-[#121212] ">
+    <div className="relative font-sans py-16 bg-[#f5f3ee] text-[#121212] ">
       <div className="p-4 w-full mx-auto sm:w-[640px] min-h-[calc(100vh-64px)]">
         <h2 className="text-xl font-semibold text-center mt-4">
           원하는 키워드를 선택해 <br /> 온앤오프 플레이리스트를 만들어보세요!
         </h2>
-
         <div className="flex flex-wrap mt-4">
           {keywordList.map((keyword) => (
             <div key={keyword} className="flex items-center space-x-2 mr-4">
@@ -113,7 +122,6 @@ export default function Page() {
             </div>
           ))}
         </div>
-
         <button
           className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90] w-full"
           onClick={onSubmit}
@@ -139,7 +147,10 @@ export default function Page() {
                   </span>
                 </li>
               ))}
-              <DownloadDialog />
+              <DownloadDialog
+                playlistNickname={playlistNickname}
+                setPlaylistNickname={setPlaylistNickname}
+              />
             </>
           ) : (
             <p className="text-[#757575]">
@@ -185,6 +196,14 @@ export default function Page() {
             </a>
           </div>
         )}
+      </div>
+
+      <div className="opacity-100 fixed">
+        <DownloadImage
+          selectedKeyword={selected}
+          finalPlaylist={finalPlaylist}
+          playlistNickname={playlistNickname}
+        />
       </div>
     </div>
   );
