@@ -10,7 +10,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import html2canvas from "html2canvas";
 import { track } from "@amplitude/analytics-browser";
 import { saveAs } from "file-saver";
 import { toBlob } from "html-to-image";
