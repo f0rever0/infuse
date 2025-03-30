@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -26,7 +26,7 @@ export function DownloadDialog({
 }: Readonly<DownloadDialogProps>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const clickDownloadButton = useCallback(() => {
+  const clickDownloadButton = () => {
     if (captureRef.current === null) {
       return;
     }
@@ -44,7 +44,7 @@ export function DownloadDialog({
 
     setPlaylistNickname("");
     setIsOpen(false);
-  }, [captureRef]);
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
