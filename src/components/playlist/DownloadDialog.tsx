@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,8 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { track } from "@amplitude/analytics-browser";
-import { saveAs } from "file-saver";
-import { toBlob } from "html-to-image";
+import { toPng } from "html-to-image";
 
 interface DownloadDialogProps {
   captureRef: React.RefObject<HTMLDivElement>;
@@ -27,21 +26,22 @@ export function DownloadDialog({
 }: Readonly<DownloadDialogProps>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const clickDownloadButton = () => {
-    const target = captureRef.current;
-    if (!target) {
-      alert("사진 저장에 실패했습니다.");
+  const clickDownloadButton = useCallback(() => {
+    if (captureRef.current === null) {
       return;
     }
 
-    toBlob(target).then((blob) => {
-      if (blob !== null) {
-        saveAs(blob, "ONF_Playlist.png");
-      }
-      setPlaylistNickname("");
-      setIsOpen(false);
-    });
-  };
+    toPng(captureRef.current, { cacheBust: true })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "my-image-name.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [captureRef]);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

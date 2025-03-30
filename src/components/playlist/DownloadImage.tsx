@@ -38,14 +38,14 @@ export function DownloadImage({
         ))}
       </ul>
 
-      <ul className="mt-2 px-4">
+      <ul className="font-sans mt-2 px-4">
         {finalPlaylist.map((song) => (
           <li
             key={song.songMelonId}
             className="px-3 py-1 border-b border-[#e8e6e1]/40 last:border-none"
           >
             <span className="font-medium text-[#121212] text-sm flex items-center">
-              ♪<span className="ml-1.5">{song.songName}</span>
+              ♪<span className="ml-1.5 font-sans">{song.songName}</span>
               {/* <span className="ml-2 text-gray-500 text-xs"> | {song.songAlbum} </span> */}
             </span>
           </li>
