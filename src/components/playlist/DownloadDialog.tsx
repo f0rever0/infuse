@@ -40,10 +40,11 @@ export function DownloadDialog({
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setPlaylistNickname("");
+        setIsOpen(false);
       });
-
-    setPlaylistNickname("");
-    setIsOpen(false);
   };
 
   return (
