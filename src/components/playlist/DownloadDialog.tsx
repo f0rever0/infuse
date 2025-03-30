@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import html2canvas from "html2canvas";
+import { track } from "@amplitude/analytics-browser";
 
 interface DownloadDialogProps {
   playlistNickname: string;
@@ -44,6 +45,9 @@ export function DownloadDialog({
         <Button
           variant="outline"
           className="w-full mt-4 bg-[#121212] text-[#f5f3ee] hover:bg-[#121212] hover:text-[#f5f3ee] "
+          onClick={() => {
+            track("플레이리스트 이미지로 저장하기");
+          }}
         >
           이미지로 저장하기
         </Button>
