@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
 import icon_melon from "@/assets/icons/icon_melon.png";
 import { track } from "@amplitude/analytics-browser";
+import { DownloadDialog } from "@/components/playlist/DownloadDialog";
+import { DownloadImage } from "@/components/playlist/DownloadImage";
 
 const keywordList = [
   "청량한",
@@ -31,8 +33,18 @@ export default function Page() {
   const [selected, setSelected] = useState<string[]>([]);
   const [notionSongList, setNotionSongList] = useState<any[]>([]);
   const [playlistLoading, setPlaylistLoading] = useState(false);
-  const [finalPlaylist, setFinalPlaylist] = useState<any[]>([]);
-  const [melonId, setMelonId] = useState("");
+  const [finalPlaylist, setFinalPlaylist] = useState<
+    {
+      songName: string;
+      songAlbum: string;
+      songMelonId: string;
+      songKeyword: string;
+      songWeight: number;
+    }[]
+  >([]);
+  const [melonId, setMelonId] = useState<string>("");
+  const [playlistNickname, setPlaylistNickname] = useState<string>("");
+  const captureRef = useRef<HTMLDivElement>(null);
 
   const handleCheckboxChange = (id: string, checked: boolean) => {
     setSelected((prev) =>
@@ -90,12 +102,11 @@ export default function Page() {
   }, [notionSongList]);
 
   return (
-    <div className="font-sans py-16 bg-[#f5f3ee] text-[#121212] ">
+    <div className="relative font-sans py-16 bg-[#f5f3ee] text-[#121212] ">
       <div className="p-4 w-full mx-auto sm:w-[640px] min-h-[calc(100vh-64px)]">
         <h2 className="text-xl font-semibold text-center mt-4">
           원하는 키워드를 선택해 <br /> 온앤오프 플레이리스트를 만들어보세요!
         </h2>
-
         <div className="flex flex-wrap mt-4">
           {keywordList.map((keyword) => (
             <div key={keyword} className="flex items-center space-x-2 mr-4">
@@ -112,9 +123,8 @@ export default function Page() {
             </div>
           ))}
         </div>
-
         <button
-          className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90]"
+          className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90] w-full"
           onClick={onSubmit}
           disabled={!selected.length || playlistLoading}
         >
@@ -124,16 +134,26 @@ export default function Page() {
         <div className="text-lg font-semibold mt-8">퓨즈의 플레이리스트</div>
         <ul className="mt-4 p-2 border rounded-md bg-[#e8e6e1]/40">
           {finalPlaylist.length ? (
-            finalPlaylist.map((song, index) => (
-              <li key={index} className="p-2 border-b border-[#d9d6cf]">
-                <span className="font-semibold text-[#121212]">
-                  🎵 {song.songName}
-                  <span className="ml-2 text-[#757575] text-sm">
-                    | {song.songAlbum}
+            <>
+              {finalPlaylist.map((song) => (
+                <li
+                  key={song.songMelonId}
+                  className="p-2 border-b border-[#d9d6cf]"
+                >
+                  <span className="font-semibold text-[#121212]">
+                    🎵 {song.songName}
+                    <span className="ml-2 text-[#757575] text-sm">
+                      | {song.songAlbum}
+                    </span>
                   </span>
-                </span>
-              </li>
-            ))
+                </li>
+              ))}
+              <DownloadDialog
+                captureRef={captureRef}
+                playlistNickname={playlistNickname}
+                setPlaylistNickname={setPlaylistNickname}
+              />
+            </>
           ) : (
             <p className="text-[#757575]">
               {playlistLoading
@@ -142,7 +162,6 @@ export default function Page() {
             </p>
           )}
         </ul>
-
         {finalPlaylist.length > 0 && (
           <div className="flex flex-row items-center mt-4">
             <a href={`${iosMelon}${melonId}`}>
@@ -179,6 +198,15 @@ export default function Page() {
             </a>
           </div>
         )}
+      </div>
+
+      <div className="opacity-0 fixed">
+        <DownloadImage
+          captureRef={captureRef}
+          selectedKeyword={selected}
+          finalPlaylist={finalPlaylist}
+          playlistNickname={playlistNickname}
+        />
       </div>
     </div>
   );

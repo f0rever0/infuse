@@ -21,9 +21,7 @@ export default function RootLayout({
         <meta property="og:image" content="/images/og_sumnail.png" />
         <meta property="og:article:author" content="@infuse_into_onf" />
       </head>
-      <body className={`${pretendard.variable} font-pretendard`}>
-        {children}
-      </body>
+      <body className={`${pretendard.variable} font-sans bg `}>{children}</body>
     </html>
   );
 }

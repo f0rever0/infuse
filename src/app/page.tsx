@@ -49,13 +49,26 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="font-sans bg-[#f5f3ee] text-[#121212] w-full min-h-screen flex flex-col justify-center items-center py-[128px]">
-        <div className="text-center mb-4 text-xl text-[#121212] sm:text-2xl">
-          {currentLanguage === "en"
-            ? "Hello! fuse! 💡"
-            : `안녕하세요, 퓨즈! 💡`}
+      <div className=" p-4 font-sans bg-[#f5f3ee] text-[#121212] w-full min-h-screen flex flex-col justify-center items-center py-[128px]">
+        <div className="w-full text-start mb-4 text-lg font-semibold text-[#121212] sm:text-2xl sm:mb-6 max-w-[1024px]">
+          플레이리스트
         </div>
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl p-4">
+        <Link
+          href={{
+            pathname: "/playlist",
+          }}
+          className="w-full max-w-[360px] justify-self-center font-sans bg-[#f5f3ee] border-2 border-[#bc2a31] text-[#bc2a31] px-3 md:px-8 md:py-3 py-3 rounded font-medium text-center hover:bg-[#bc2a31] hover:text-[#f5f3ee] transition-colors"
+          onClick={() => {
+            track("index playlist button");
+          }}
+        >
+          멜론 플레이리스트 만들기
+        </Link>
+
+        <div className="w-full text-start my-4 text-lg font-semibold text-[#121212] sm:text-2xl sm:my-6 max-w-[1024px]">
+          동영상 아카이빙
+        </div>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl">
           {video.map((data) => (
             <Link
               key={data.title}
