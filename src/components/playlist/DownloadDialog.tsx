@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import html2canvas from "html2canvas";
 import { track } from "@amplitude/analytics-browser";
 import { saveAs } from "file-saver";
+import { toBlob } from "html-to-image";
 
 interface DownloadDialogProps {
   captureRef: React.RefObject<HTMLDivElement>;
@@ -34,16 +35,10 @@ export function DownloadDialog({
       return;
     }
 
-    html2canvas(target, {
-      useCORS: true,
-      allowTaint: true,
-    }).then((canvas) => {
-      canvas.toBlob((blob) => {
-        if (blob !== null) {
-          saveAs(blob, "ONF_Playlist.png");
-        }
-      });
-
+    toBlob(target).then((blob) => {
+      if (blob !== null) {
+        saveAs(blob, "ONF_Playlist.png");
+      }
       setPlaylistNickname("");
       setIsOpen(false);
     });
