@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/common/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,10 +8,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+} from "@/components/common/ui/dialog";
+import { Input } from "@/components/common/ui/input";
 import { track } from "@amplitude/analytics-browser";
-import { toPng } from "html-to-image";
+import { useImageDownload } from "@/hooks/useImageDownload";
 
 interface DownloadDialogProps {
   captureRef: React.RefObject<HTMLDivElement>;
@@ -25,26 +25,14 @@ export function DownloadDialog({
   setPlaylistNickname,
 }: Readonly<DownloadDialogProps>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { downloadImage } = useImageDownload();
 
-  const clickDownloadButton = () => {
-    if (captureRef.current === null) {
-      return;
+  const clickDownloadButton = async () => {
+    const success = await downloadImage(captureRef);
+    if (success) {
+      setPlaylistNickname("");
+      setIsOpen(false);
     }
-
-    toPng(captureRef.current, { cacheBust: true })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "ONF_playlist.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setPlaylistNickname("");
-        setIsOpen(false);
-      });
   };
 
   return (
