@@ -6,8 +6,8 @@ import { pageViewTrackingEnrichment } from "@/utils/pageViewTrackingEnrichment";
 import Link from "next/link";
 import video from "@/data/video.json";
 import { translateLanguage } from "@/utils/translate";
-import Header from "@/components/main/Header";
-import Footer from "@/components/main/Footer";
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
 import { track } from "@amplitude/analytics-browser";
 import { TranslationDataType } from "@/types/data";
 

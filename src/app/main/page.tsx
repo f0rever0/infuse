@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import VideoList from "@/components/main/VideoList";
+import VideoList from "@/components/features/video/VideoList";
 import video from "@/data/video.json";
 
 function MainPageContent() {

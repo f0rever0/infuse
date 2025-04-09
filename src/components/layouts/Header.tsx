@@ -2,10 +2,6 @@
 
 import { Suspense, useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
-import video from "@/data/video.json";
-import VideoList from "@/components/main/VideoList";
-import Banner from "@/components/main/Banner";
-import Footer from "@/components/main/Footer";
 import Link from "next/link";
 import { track } from "@amplitude/analytics-browser";
 import icon_infuse from "@/assets/icons/icon_infuse.svg";

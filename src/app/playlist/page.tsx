@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from "@/components/common/ui/checkbox";
 import Image from "next/image";
 import icon_melon from "@/assets/icons/icon_melon.png";
 import { track } from "@amplitude/analytics-browser";
-import { DownloadDialog } from "@/components/playlist/DownloadDialog";
-import { DownloadImage } from "@/components/playlist/DownloadImage";
+import { DownloadDialog } from "@/components/features/playlist/DownloadDialog";
+import { DownloadImage } from "@/components/features/playlist/DownloadImage";
 
 const keywordList = [
   "청량한",
