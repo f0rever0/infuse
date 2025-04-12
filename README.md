@@ -11,13 +11,13 @@ yarn dev
 
 ## 주요 기능
 1. 유튜브 동영상 아카이빙
-2. 동영사 북마크 
+2. 동영상 북마크 
 3. 플레이리스트 생성 및 이미지 저장
 
 [ 멜론 플레이리스트 만들기 ]
 
-https://github.com/user-attachments/assets/05f2ea1c-aff6-46a2-881b-8ee251d66a3b
 
+https://github.com/user-attachments/assets/fa3282da-99a8-4488-8cf8-1b77eaa7b2b3
 
 [ 플레이리스트 이미지로 저장 ]
 
