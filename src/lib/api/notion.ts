@@ -5,6 +5,13 @@ import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints"
 export async function queryNotionDatabase(
   params: NotionQueryParams
 ): Promise<QueryDatabaseResponse> {
+  if (params.selectedKeywordList.length === 0) {
+    const response = await notionClient.databases.query({
+      database_id: notionDatabase,
+    });
+    return response;
+  }
+
   const filterConditions: NotionFilter[] = params.selectedKeywordList.map(
     (keyword) => ({
       property: "키워드",
