@@ -8,6 +8,7 @@ import icon_bugs from "@/assets/icons/icon_bugs.png";
 import { track } from "@amplitude/analytics-browser";
 import { DownloadDialog } from "@/components/features/playlist/DownloadDialog";
 import { DownloadImage } from "@/components/features/playlist/DownloadImage";
+import { Button } from "@/components/common/ui/button";
 
 const keywordList = [
   "청량한",
@@ -130,13 +131,14 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <button
-          className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90] w-full"
+        <Button
+          variant="red"
+          className="mt-4 disabled:bg-[#d78c90] w-full"
           onClick={onSubmit}
           disabled={!selected.length || playlistLoading}
         >
           플레이리스트 생성하기
-        </button>
+        </Button>
 
         <div className="text-lg font-semibold mt-8">퓨즈의 플레이리스트</div>
         <ul className="mt-4 p-2 border rounded-md bg-[#e8e6e1]/40">
@@ -172,8 +174,8 @@ export default function Page() {
         {finalPlaylist.length > 0 && (
           <div>
             <div className="flex flex-row items-center mt-4">
-              <a href={`${iosMelon}${melonId}`}>
-                <button className="rounded-md flex items-center px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mr-2">
+              <Button asChild variant="red" className="mr-2">
+                <a href={`${iosMelon}${melonId}`}>
                   <Image
                     unoptimized
                     className="mr-2 rounded-lg"
@@ -183,11 +185,11 @@ export default function Page() {
                     height={18}
                   />
                   아이폰으로 듣기
-                </button>
-              </a>
-              <a href={`${androidMelon}${melonId}`}>
-                <button
-                  className="rounded-md flex items-center px-4 py-2 bg-[#bc2a31] text-[#f5f3ee]"
+                </a>
+              </Button>
+              <Button asChild variant="red">
+                <a
+                  href={`${androidMelon}${melonId}`}
                   onClick={() => track("멜론 안드로이드로 듣기")}
                 >
                   <Image
@@ -199,13 +201,14 @@ export default function Page() {
                     height={18}
                   />
                   안드로이드로 듣기
-                </button>
-              </a>
+                </a>
+              </Button>
             </div>
+
             <div className="flex flex-row items-center mt-4">
-              <a href={`${bugs}${bugsId}`}>
-                <button
-                  className="rounded-md flex items-center px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mr-2"
+              <Button asChild variant="red" className="mr-2">
+                <a
+                  href={`${bugs}${bugsId}`}
                   onClick={() => track("벅스 아이폰으로 듣기")}
                 >
                   <Image
@@ -217,11 +220,11 @@ export default function Page() {
                     height={18}
                   />
                   아이폰으로 듣기
-                </button>
-              </a>
-              <a href={`${bugs}${bugsId}`}>
-                <button
-                  className="rounded-md flex items-center px-4 py-2 bg-[#bc2a31] text-[#f5f3ee]"
+                </a>
+              </Button>
+              <Button asChild variant="red">
+                <a
+                  href={`${bugs}${bugsId}`}
                   onClick={() => track("벅스 안드로이드로 듣기")}
                 >
                   <Image
@@ -233,8 +236,8 @@ export default function Page() {
                     height={18}
                   />
                   안드로이드로 듣기
-                </button>
-              </a>
+                </a>
+              </Button>
             </div>
           </div>
         )}
