@@ -62,7 +62,7 @@ export default function Home() {
             track("index playlist button");
           }}
         >
-          멜론 플레이리스트 만들기
+          멜론 / 벅스 플레이리스트 만들기
         </Link>
 
         <div className="w-full text-start my-4 text-lg font-semibold text-[#121212] sm:text-2xl sm:my-6 max-w-[1024px]">
