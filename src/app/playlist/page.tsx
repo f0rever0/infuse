@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { Checkbox } from "@/components/common/ui/checkbox";
 import Image from "next/image";
 import icon_melon from "@/assets/icons/icon_melon.png";
+import icon_bugs from "@/assets/icons/icon_bugs.png";
 import { track } from "@amplitude/analytics-browser";
 import { DownloadDialog } from "@/components/features/playlist/DownloadDialog";
 import { DownloadImage } from "@/components/features/playlist/DownloadImage";
+import { Button } from "@/components/common/ui/button";
 
 const keywordList = [
   "청량한",
@@ -28,6 +30,7 @@ const keywordList = [
 // 멜론 원클릭 스밍리스트 url
 const iosMelon = "meloniphone://play/?ctype=1&menuid=0&cid=";
 const androidMelon = "melonapp://play?ctype=1&menuid=1000002721&cid=";
+const bugs = "bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=";
 
 export default function Page() {
   const [selected, setSelected] = useState<string[]>([]);
@@ -43,6 +46,7 @@ export default function Page() {
     }[]
   >([]);
   const [melonId, setMelonId] = useState<string>("");
+  const [bugsId, setBugsId] = useState<string>("");
   const [playlistNickname, setPlaylistNickname] = useState<string>("");
   const captureRef = useRef<HTMLDivElement>(null);
 
@@ -78,6 +82,7 @@ export default function Page() {
       songName: song.properties["이름"].title[0]?.plain_text,
       songAlbum: song.properties["앨범"].select.name,
       songMelonId: song.properties["멜론Id"].rich_text[0]?.plain_text,
+      songBugsId: song.properties["벅스Id"].rich_text[0]?.plain_text,
       songKeyword: song.properties["키워드"].multi_select.map(
         (k: { color: string; id: string; name: string }) => k.name
       ),
@@ -98,6 +103,9 @@ export default function Page() {
 
     // 4. 멜론Id로 플레이리스트 생성
     setMelonId(shuffledSongs.map((song) => song.songMelonId).join(","));
+
+    // 5. 벅스Id로 플레이스르트 생성
+    setBugsId(shuffledSongs.map((song) => song.songBugsId).join("|"));
     setPlaylistLoading(false);
   }, [notionSongList]);
 
@@ -123,13 +131,14 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <button
-          className="px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mt-4 rounded-md disabled:bg-[#d78c90] w-full"
+        <Button
+          variant="red"
+          className="mt-4 disabled:bg-[#d78c90] w-full"
           onClick={onSubmit}
           disabled={!selected.length || playlistLoading}
         >
           플레이리스트 생성하기
-        </button>
+        </Button>
 
         <div className="text-lg font-semibold mt-8">퓨즈의 플레이리스트</div>
         <ul className="mt-4 p-2 border rounded-md bg-[#e8e6e1]/40">
@@ -163,39 +172,76 @@ export default function Page() {
           )}
         </ul>
         {finalPlaylist.length > 0 && (
-          <div className="flex flex-row items-center mt-4">
-            <a href={`${iosMelon}${melonId}`}>
-              <button
-                className="rounded-md flex items-center px-4 py-2 bg-[#bc2a31] text-[#f5f3ee] mr-4"
-                onClick={() => track("멜론 아이폰으로 듣기")}
-              >
-                <Image
-                  unoptimized
-                  className="mr-1 rounded-lg"
-                  src={icon_melon}
-                  alt=""
-                  width={18}
-                  height={18}
-                />
-                아이폰으로 듣기
-              </button>
-            </a>
-            <a href={`${androidMelon}${melonId}`}>
-              <button
-                className="rounded-md flex items-center px-4 py-2 bg-[#bc2a31] text-[#f5f3ee]"
-                onClick={() => track("멜론 안드로이드로 듣기")}
-              >
-                <Image
-                  unoptimized
-                  className="mr-1 rounded-lg"
-                  src={icon_melon}
-                  alt=""
-                  width={18}
-                  height={18}
-                />
-                안드로이드로 듣기
-              </button>
-            </a>
+          <div>
+            <div className="flex flex-row items-center mt-4">
+              <Button asChild variant="red" className="mr-2">
+                <a
+                  href={`${iosMelon}${melonId}`}
+                  onClick={() => track("멜론 아이폰으로 듣기")}
+                >
+                  <Image
+                    unoptimized
+                    className="mr-2 rounded-lg"
+                    src={icon_melon}
+                    alt=""
+                    width={18}
+                    height={18}
+                  />
+                  아이폰으로 듣기
+                </a>
+              </Button>
+              <Button asChild variant="red">
+                <a
+                  href={`${androidMelon}${melonId}`}
+                  onClick={() => track("멜론 안드로이드로 듣기")}
+                >
+                  <Image
+                    unoptimized
+                    className="mr-2 rounded-lg"
+                    src={icon_melon}
+                    alt=""
+                    width={18}
+                    height={18}
+                  />
+                  안드로이드로 듣기
+                </a>
+              </Button>
+            </div>
+
+            <div className="flex flex-row items-center mt-4">
+              <Button asChild variant="red" className="mr-2">
+                <a
+                  href={`${bugs}${bugsId}`}
+                  onClick={() => track("벅스 아이폰으로 듣기")}
+                >
+                  <Image
+                    unoptimized
+                    className="mr-2 rounded-lg"
+                    src={icon_bugs}
+                    alt=""
+                    width={18}
+                    height={18}
+                  />
+                  아이폰으로 듣기
+                </a>
+              </Button>
+              <Button asChild variant="red">
+                <a
+                  href={`${bugs}${bugsId}`}
+                  onClick={() => track("벅스 안드로이드로 듣기")}
+                >
+                  <Image
+                    unoptimized
+                    className="mr-2 rounded-lg"
+                    src={icon_bugs}
+                    alt=""
+                    width={18}
+                    height={18}
+                  />
+                  안드로이드로 듣기
+                </a>
+              </Button>
+            </div>
           </div>
         )}
       </div>
