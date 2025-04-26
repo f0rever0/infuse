@@ -175,7 +175,10 @@ export default function Page() {
           <div>
             <div className="flex flex-row items-center mt-4">
               <Button asChild variant="red" className="mr-2">
-                <a href={`${iosMelon}${melonId}`}>
+                <a
+                  href={`${iosMelon}${melonId}`}
+                  onClick={() => track("멜론 아이폰으로 듣기")}
+                >
                   <Image
                     unoptimized
                     className="mr-2 rounded-lg"
