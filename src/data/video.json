@@ -3,6 +3,16 @@
     "title": "the stranger",
     "list": [
       {
+        "sumnailUrl": "https://img.youtube.com/vi/h1NE3NIUpck/0.jpg",
+        "videoTitle": "Anti Hero (OFF Team Ver.) 안무 영상",
+        "videoUrl": "https://www.youtube.com/watch?v=h1NE3NIUpck"
+      },
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/C_l03Xghe7U/0.jpg",
+        "videoTitle": "Collab 안무 영상",
+        "videoUrl": "https://www.youtube.com/watch?v=C_l03Xghe7U"
+      },
+      {
         "sumnailUrl": "https://img.youtube.com/vi/s_xxQkDEy-Y/0.jpg",
         "videoTitle": "[LIGHTS ON] 'The Stranger' 활동 1주 차 Behind",
         "videoUrl": "https://www.youtube.com/watch?v=s_xxQkDEy-Y"
@@ -317,6 +327,11 @@
   {
     "title": "practice",
     "list": [
+      {
+        "sumnailUrl": "https://img.youtube.com/vi/h1NE3NIUpck/0.jpg",
+        "videoTitle": "Anti Hero (OFF Team Ver.) 안무 영상",
+        "videoUrl": "https://www.youtube.com/watch?v=h1NE3NIUpck"
+      },
       {
         "sumnailUrl": "https://img.youtube.com/vi/C_l03Xghe7U/0.jpg",
         "videoTitle": "Collab 안무 영상",
